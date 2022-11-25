@@ -17,11 +17,34 @@
         \symup{b_n} &=\frac{2}{\symup{T}}\int_0^{\symup{T}}f(t)\sin{(n\frac{2\symup{\pi}}{\symup{T}}t)}\symup{d}t
         \label{eqn:Koeffizienten}
     \end{align}
-    berechnen.Ein Anteil für n=0 entspricht dabei einen sogenannten Offset.
+    berechnen.Ein Anteil für n=0 entspricht dabei einem sogenannten Offset.
     Das heißt das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0 
     versetzten Wert.\\
-    Diese Reihendarstellung des Signals konvergiert gleichmäßig
+
+    \noindent Diese Reihendarstellung des Signals konvergiert gleichmäßig
     gegen das zu beschreibende Signal f, wenn f stetig ist. An Stellen der Unstetigkeit
     tritt das Gibbsche Phänomen auf.Demnach kommt es im Bereich der Unsteigkeit zu einer
     Überschwingung, die keinen experimentellen Fehlern zugrunde liegt.
     \cite{V351}
+\subsection{Fourier-Analyse}
+Bei der Fourier-Analyse wird ein zeitlich periodische Signal auf
+seine Frequenzanteile geprüft. Dazu wurden analoge und digitale Verfahren entworfen.
+Ein analoges Verfahren basiert auf den Eigenschaften eines elektrischen Schwingkreises. Bei einer speziellen Frequenz,
+der Resonanzfrequenz,besitzt dieser einen merklichen Überschwinger. Legt man ein Signal an den Eingang einer solchen Schaltung
+und stellt die Grundfrequenz auf Resonanzfrequenz, kann man jetzt die Amplitudenverhältnisse der einzelnen Oberwellen zur Grundfrequenz messen.
+Da bei neu eingestellter Frequenz $\nu/n$ die n-te Oberwelle Resonanz am Ausgang hervorruft.\\
+
+\noindent Bei Digitalen Verfahren wird das Signal quantisiert. Mit der sogenannten
+Abtastfrequenz, die mindestens doppelt so groß wie die höchste zu messende Oberwellen Frequenz sein soll,
+werden Messwerte genommen und dann mit einer Fast-Fourier-Transformation in den
+Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden können.
+\cite{V351}
+\newpage
+\subsection{Fourier-Synthese}
+In der Fouriersynthese werden periodische Signale aus bereits bestehenden Oberwellen
+zusammengesetzt. Das heißt die Amplituden, also die Fourierkoeffizienten,
+lassen sich so einstellen, dass ein gewünschtes Ausgangssignal entsteht (z.B. Rechtecksignal).
+\cite{V351}
+\subsection{Vorbereitung:Fourierreihe zu 3 periodischen Signalen}
+
+    
