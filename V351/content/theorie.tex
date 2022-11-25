@@ -1,5 +1,27 @@
 \section{Theorie}
 \label{sec:Theorie}
-\subsection{Fourier-Reihe}
-    
-\cite{sample}
+\subsection{Fourier-Theorie}
+    Das Fouriersche Theorem besagt, dass sich jedes periodische
+    Signal als eine Reihe aus Sinus- und Cosinusfunktionen der Form
+    \begin{equation}
+        \label{eqn:Fourier-Reihe}
+        f(t)=\frac{1}{2}\symup{a_0}+\sum_{n=1}^{\infty}\left(\symup{a_n} \cos(n\frac{2\symup{\pi}}{\symup{T}}t)+\symup{b_n} \sin(n\frac{2\symup{\pi}}{\symup{T}}t)\right)
+    \end{equation}
+    beschreiben lässt. Wobei T die Periodendauer des Signals ist.
+    Mit der Periodendauer T lässt sich zur Grundfrequenz $\frac{1}{\symup{T}}$ eine Kreisfrequenz $\omega=\frac{2\symup{\pi}}{T}$
+    definieren. Die Koeffizienten $\symup{a_n}$ und $\symup{b_n}$ beschreiben die Anteile aller
+    Oberwellen, Schwingungen mit einem ganzzahligen Vielfachen der Grundfrequenz,
+    die im Signal enthalten sind. Analytisch lassen Sie sich mit den Formeln
+    \begin{align}
+        \symup{a_n} &=\frac{2}{\symup{T}}\int_0^{\symup{T}}f(t)\cos{(n\frac{2\symup{\pi}}{\symup{T}}t)}\symup{d}t&
+        \symup{b_n} &=\frac{2}{\symup{T}}\int_0^{\symup{T}}f(t)\sin{(n\frac{2\symup{\pi}}{\symup{T}}t)}\symup{d}t
+        \label{eqn:Koeffizienten}
+    \end{align}
+    berechnen.Ein Anteil für n=0 entspricht dabei einen sogenannten Offset.
+    Das heißt das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0 
+    versetzten Wert.\\
+    Diese Reihendarstellung des Signals konvergiert gleichmäßig
+    gegen das zu beschreibende Signal f, wenn f stetig ist. An Stellen der Unstetigkeit
+    tritt das Gibbsche Phänomen auf.Demnach kommt es im Bereich der Unsteigkeit zu einer
+    Überschwingung, die keinen experimentellen Fehlern zugrunde liegt.
+    \cite{V351}
