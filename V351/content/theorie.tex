@@ -37,9 +37,21 @@ Da bei neu eingestellter Frequenz $\nu/n$ die n-te Oberwelle Resonanz am Ausgang
 \noindent Bei Digitalen Verfahren wird das Signal quantisiert. Mit der sogenannten
 Abtastfrequenz, die mindestens doppelt so groß wie die höchste zu messende Oberwellen Frequenz sein soll,
 werden Messwerte genommen und dann mit einer Fast-Fourier-Transformation in den
-Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden können.
+Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden können.\\
+
+\noindent Amplitudenverhältnisse werden teilweise in Dezibel angegeben. Bei gegebener Referenzspannung
+$\symup{U_0}$ (z.B Spannung der Grundfrequenz) ist das Verhältnis in Dezibel[dB] gegeben durch
+\begin{equation}
+    \left|\frac{\symup{U_n}}{\symup{U_0}}\right|_{\symup{dB}}=20\log{\frac{\symup{U_n}}{\symup{U_0}}}
+\end{equation}
+, wobei mit dem 10er-Logarithmus gearbeitet wird. Das richtige Spannungsverhältnis aus einer dB Angabe
+kann dann nach Umstellen mit
+\begin{equation}
+    \frac{\symup{U_n}}{\symup{U_0}}=10^{\frac{1}{20}\cdot\left|\frac{\symup{U_n}}{\symup{U_0}}\right|_{\symup{dB}}}
+\end{equation}
+berechnet werden.
 \cite{V351}
-\newpage
+\cite{NeuesGP}
 \subsection{Fourier-Synthese}
 In der Fouriersynthese werden periodische Signale aus bereits bestehenden Oberwellen
 zusammengesetzt. Das heißt die Amplituden, also die Fourierkoeffizienten,
