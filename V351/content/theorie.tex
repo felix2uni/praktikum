@@ -43,6 +43,7 @@ Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden könne
 $\symup{U_0}$ (z.B Spannung der Grundfrequenz) ist das Verhältnis in Dezibel[dB] gegeben durch
 \begin{equation}
     \left|\frac{\symup{U_n}}{\symup{U_0}}\right|_{\symup{dB}}=20\log{\frac{\symup{U_n}}{\symup{U_0}}}
+    \label{eqn:Dezibel}
 \end{equation}
 , wobei mit dem 10er-Logarithmus gearbeitet wird. Das richtige Spannungsverhältnis aus einer dB Angabe
 kann dann nach Umstellen mit
@@ -58,5 +59,38 @@ zusammengesetzt. Das heißt die Amplituden, also die Fourierkoeffizienten,
 lassen sich so einstellen, dass ein gewünschtes Ausgangssignal entsteht (z.B. Rechtecksignal).
 \cite{V351}
 \subsection{Vorbereitung:Fourierreihe zu 3 periodischen Signalen}
+    \subsubsection{Rechtecksignal}
+    Ein Rechtecksignal der Art 
+    \begin{equation}
+        f_0(t)=
+        \begin{cases}
+            h & 0\leq t < \frac{L}{2}\\
+            -h& \frac{L}{2} \leq t < L\\
+            0 & \text{sonst}\\
+        \end{cases}
+        \label{eqn:Rechteck}
+    \end{equation}
+    wird periodisch fortgesetzt, also um nL verschoben unendlich häufig addiert.
+    Es ist sofort einzusehen, dass es keinen Offset gibt, da es gleiche Anteile über und
+    unter Null besitzt. Außerdem ist das Signal eine ungerade Funktion um die 0,
+    also gehen nur Sinusterme mit in die Rechnung ein. Für die Koeffizienten bn
+    ergibt sich:
+    \begin{equation}
+        \symup{b_n}=\frac{2}{\symup{L}}\left(\int_0^{\frac{2}{\symup{L}}}\symup{h}\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t+\int_{\frac{2}{\symup{L}}}^{\symup{L}}(-\symup{h})\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t\right)
+        =\frac{2\symup{h}}{\pi \symup{n}}\left(1-(-1)^n\right)
+        =\frac{4\symup{h}}{\pi(2\symup{n}-1)}  , n\in \symbb{N}
+    \end{equation}
+    \subsubsection{Sägezahn}
+    Eine Sägezahnfunktion mit fallender Flanke kann mit der Funktion
+    $f(t)=\symup{h}(1-\frac{2\symup{t}}{\symup{L}}), 0\leq t<L$ beschrieben werden. Sie hat ebenfalls
+    keinen Offset, da sie linear abfällt und die Nullstelle genau in der Intervallmitte liegt. Die Funktion
+    ist ebenfalls ungerade, weshalb nur Sinusterme auftauchen werden.
+    Die Koeffizienten $\symup{b_n}$ ergeben sich dann zu:
+    \begin{equation}
+        \symup{b_n}=\frac{2}{\symup{L}}\left(\int_0^{\symup{L}}\symup{h}\left(1-\frac{2t}{\symup{L}}\right)\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t\right)
+        =\frac{\symup{h}}{\pi \symup{n}}\left(1-1+2-\frac{2\symup{h}}{L}\left[\frac{\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}}{\frac{2\symup{\pi}\symup{n}}{\symup{L}}}\right]_0^{\symup{L}}\right)
+        =\frac{2\symup{h}}{\pi\symup{n}}  , n\in \symbb{N}
+    \end{equation}
+    \subsubsection{Dreieck}
 
     
