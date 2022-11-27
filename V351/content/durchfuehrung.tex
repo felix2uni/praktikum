@@ -29,3 +29,28 @@ nicht zur 0-Linie des Oszilloskop.\\
 Sägezahnfunktion haben wir uns dazu entschlossen zwei Messreihen bei unterschiedlicher Skalierung durchzuführen,
 da es beim ersten Durchgang teilweise einige Schwankungen bei den gemessenen Amplitude gab.
 \subsection{Aufbau und Durchführung der Fourier-Synthese}
+Für die Fourier-Synthese wurde ein Oberwellengenerator verwendet, der bis zu 
+10 Oberwellen erzeugen kann. Diese können alle bezüglich ihrer Amplitude und Phase separat eingestellt werden.
+Jede Oberwelle hat ihren eigenen Ausgang, womit diese einzeln auf ein Oszilloskop gegeben und
+eingestellt werden können. Das Summierte Signal lässt sich ebenfalls direkt am Oberwellengenerator
+abgreifen und kann dann zur Untersuchung und Visualisierung auf ein Oszilloskop gegeben werden.\\
+\noindent Das Oszilloskop wird in zwei verschieden Konfigurationen betrieben, einmal im Zeitbereich, um
+das synthetisierte Signal zu visualisieren und einmal im XY-Modus. Im XY-Modus können zwei Signale, die an
+Channel 1 und 2 angeschlossen sind gegeneinander aufgetragen werden. Das bedeutet bei Sinusschwingungen, schwingt der
+eine Channel in X-Richtung und der andere in Y-Richtung. Die Folge ist, dass zwei Signale mit gleicher Frequenz, aber Phasenversatz
+von 90° auf dem Oszilloskop einen Kreis ergeben. Bei Phasengleichheit ergibt sich eine gerade Linie. Diese Figuren
+heißen Lissajous-Figuren. Da bei Phasengleichheit diese Figuren immer Linien sind, lassen sich mit diesen Figuren die Phasen
+der einzelnen Oberwellen richtig einstellen. \\
+\noindent Damit beginnt dieser 2. Versuchsteil auch. Die Spannung der Grundfrequenz wird auf das Maximum
+von $\qty{660}{\mV}$ eingestellt. Die Grundfrequenz wird dann an Channel 1 angeschlossen. An Channel 2 werden dann der Reihe nach alle Oberwellen angeschlossen.
+Das Oszilloskop befindet sich im XY-Modus und über die Drehschalter werden die einzelnen Oberwellen Phasengleich zur 1. Oberwelle eingestellt.
+Dass die Signale Phasengleich sind, lässt sich dann an den resultierenden Lissajous-Figuren erkennen.\\
+\noindent Nachdem die Oberwellen alle Phasengleich sind oder sich um genau 180° unterscheiden, kann die eigentliche
+Synthetisierung starten. Gemäß der Koeffizienten\eqref{eqn:Rechteck-Koeff}\eqref{eqn:Sägezahn-Koeff}\eqref{eqn:Dreieck-Koeff}, die in der Vorbereitung berechnet wurden, können damit die Spannungen
+der einzelnen Oberwellen an einem Voltmeter eingestellt werden. Das Voltmeter muss auf AC gestellt sein.
+Wenn für das jeweilige Signal die Spannungen der Oberwellen eingestellt wurden, werden nacheinander die einzelnen
+Oberwellen aufsummiert. Dabei wird das summierte Signal auf dem Oszilloskop im Zeitbereich
+dargestellt. Es muss bei jeder dazugeschalteten Oberwelle darauf geachtet werden, ob sich das Signal dem
+gewünschten Signal annähert. Falls es zu einer Verschlechterung kommt, muss die jeweilige Phase der Oberwelle womöglich um 180°
+verschoben werden. Das resultierende Signal, was nach Aufsummierung
+entsteht, lässt sich dann auf dem Oszilloskop darstellen und mit der Theoriekurve vergleichen.
