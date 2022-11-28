@@ -1,4 +1,4 @@
-all: build/V351.pdf
+all: V351.pdf
 
 # hier Python-Skripte:
 build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
@@ -21,6 +21,9 @@ build/V351.pdf: FORCE | build
 	  --interaction=nonstopmode \
 	  --halt-on-error \
 	V351.tex
+
+V351.pdf: build/V351.pdf
+	cp build/V351.pdf V351.pdf
 
 build:
 	mkdir -p build
