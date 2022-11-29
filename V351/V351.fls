@@ -1,5 +1,0 @@
-PWD /home/felix/semester7/Praktikum/Protokolle/V351
-INPUT /usr/share/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/felix/semester7/Praktikum/Protokolle/V351/V351.tex
-OUTPUT V351.log

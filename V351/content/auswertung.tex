@@ -1,12 +1,156 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-% \begin{figure}
-%   \centering
-%   \includegraphics{plot.pdf}
-%   \caption{Plot.}
-%   \label{fig:plot}
-% \end{figure}
+\subsection{Fourier-Analyse}
+\subsubsection{Messdaten}
+
+Die mit dem Oszilloskop gemessenen Werte für Frequenz und Amplitude sind in den Tabellen 1 bis 3 zu finden.
+Wobei 2 und 3 eine Wiederholung der Sägezahnfunktion sind.
+
+% Siehe \autoref{fig:square}!
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{ |c|c| }
+      \hline
+      Frequenz/Hz & Amplitude/dB \\
+      \hline
+      20          & -1.79        \\
+      60          & -11          \\
+      100         & -15          \\
+      140         & -17.8        \\
+      180         & -19.8        \\
+      220         & -21.4        \\
+      260         & -23.4        \\
+      300         & -24.6        \\
+      340         & -26.2        \\
+      380         & -27.4        \\
+      \hline
+    \end{tabular}
+    \caption{\label{rechteck-table} Rechteckwelle.}
+  \end{center}
+\end{table}
 
 
-% Siehe \autoref{fig:plot}!
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      Frequenz/Hz & Amplitude/dB \\
+      \hline
+      20          & -6.59        \\
+      40          & -13.0        \\
+      60          & -16.6        \\
+      80          & -19.8        \\
+      100         & -22.2        \\
+      120         & -24.6        \\
+      140         & -23.8        \\
+      160         & -24.6        \\
+      180         & -26.2        \\
+      200         & -26.6        \\
+      \hline
+    \end{tabular}
+    \caption{\label{ramp-1-table}Sägezahnwelle (Messung 1).}
+  \end{center}
+\end{table}
+
+
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      Frequenz/Hz & Amplitude/dB \\
+      \hline
+      20          & -7.79        \\
+      40          & -12.6        \\
+      60          & -17          \\
+      80          & -19          \\
+      100         & -21          \\
+      120         & -23          \\
+      140         & -23.8        \\
+      160         & -25.8        \\
+      180         & -26.2        \\
+      200         & -27.8        \\
+      \hline
+    \end{tabular}
+    \caption{\label{ramp-2-table}Sägezahnwelle (Messung 2).}
+  \end{center}
+\end{table}
+
+\subsubsection{Analyse}
+
+Zur Bestimmung der Abhängigkeiten werden Frequenz und Amplitude doppelt logarithmisch gegeneinander aufgetragen
+und dann mit einer Linearen Funktion der Form
+
+\[
+  y=cx+b
+\]
+
+gefittet.
+
+Die Steigung der gefitteten Gleichung gibt dann die exponentielle Abhängigkeit der Amplituden zu den Frequenzen an.
+
+Für die Rechteckfunktion \autoref{fig:square} ergibt sich eine Steigung von -0.99\pm4.
+Somit haben wir ungefähr eine $\frac{1}{n}$ Abhängigkeit.
+
+\begin{figure}
+  % \centering
+  \includegraphics[width=\textwidth]{square.pdf}
+  \caption{Lineare Regression der Rechteckschwingung.}
+  \label{fig:square}
+\end{figure}
+
+Die Steigung der Ausgleichsgeraden für Sägezahnfunktionen
+\autoref{fig:ramp1}+\autoref{fig:ramp2} ist mit $-1.02\pm4$
+erneut ziemlich nah an dem theoretischen wert von $\frac{1}{n}$.
+
+\begin{figure}
+  % \centering
+  \includegraphics[width=\textwidth]{ramp1.pdf}
+  \caption{Lineare Regression der Sägezahnfunktion (Messung 1).}
+  \label{fig:ramp1}
+\end{figure}
+
+
+\begin{figure}
+  % \centering
+  \includegraphics[width=\textwidth]{ramp2.pdf}
+  \caption{Lineare Regression der Sägezahnfunktion (Messung 2).}
+  \label{fig:ramp2}
+\end{figure}
+
+
+\pagebreak
+\subsection{Fourier-Synthese}
+
+Bei der Fourier-Synthese wurden die Die Funktionen (Rechteck und Sägezahn) bis zur 10. Oberwelle synthetisiert.
+Die 1. Oberwelle hatte dabei eine Amplitude von $v_{ppv}660mv$.
+Bei der Rechtecks und Sägezahnfunktion kann man starke Auslenkungen im Verlauf der Kurve Sehen \autoref{img:square} \autoref{img:ramp} (die Dreiecksfunktion \autoref{img:triangle} hat dieses Problem nicht obwohl hier nur bis zur dritten Oberwelle synthetisiert werden konnte).
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{content/images/rechteck_1.jpg}
+  \caption{Rechteckfunktion (Synthese bis zur 10. Oberwelle).}
+  \label{img:square}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{content/images/dreieck_2.jpg}
+  \caption{Dreiecksfunktion (Synthese bis zur 3. Oberwelle).}
+  \label{img:triangle}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{content/images/saegetzahn_1.jpg}
+  \caption{Sägezahnfunktion (Synthese bis zur 10. Oberwelle).}
+  \label{img:ramp}
+\end{figure}
+
+
+
