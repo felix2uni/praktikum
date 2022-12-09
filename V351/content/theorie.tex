@@ -2,57 +2,55 @@
 \label{sec:Theorie}
 \subsection{Fourier-Theorie}
 Das Fouriersche Theorem besagt, dass sich jedes periodische
-Signal als eine Reihe von Sinus- und Cosinusfunktionen der Form
+Signal $f(t)$ als eine Reihe von Sinus- und Cosinusfunktionen der Form
 \begin{equation}
     \label{eqn:Fourier-Reihe}
-    f(t)=\frac{1}{2}\symup{a_0}+\sum_{n=1}^{\infty}\left(\symup{a_n} \cos(n\frac{2\symup{\pi}}{\symup{T}}t)+\symup{b_n} \sin(n\frac{2\symup{\pi}}{\symup{T}}t)\right)
+    f(t)=\frac{1}{2}a_0+\sum_{n=1}^{\infty}\left(a_n \cos(n\frac{2\symup{\pi}}{T}t)+b_n \sin(n\frac{2\symup{\pi}}{T}t)\right)
 \end{equation}
 beschreiben lässt. Wobei T die Periodendauer des Signals ist.
 Mit der Periodendauer T lässt sich zur Grundfrequenz $\frac{1}{\symup{T}}$ eine Kreisfrequenz $\omega=\frac{2\symup{\pi}}{T}$
-definieren. Die Koeffizienten $\symup{a_n}$ und $\symup{b_n}$ beschreiben die Anteile aller
+definieren. Die Koeffizienten $a_n$ und $b_n$ beschreiben die Anteile aller
 Oberwellen, Schwingungen mit einem ganzzahligen Vielfachen der Grundfrequenz,
 die im Signal enthalten sind. Analytisch lassen Sie sich mit den Formeln
 \begin{align}
-    \symup{a_n} & =\frac{2}{\symup{T}}\int_0^{\symup{T}}f(t)\cos{(n\frac{2\symup{\pi}}{\symup{T}}t)}\symup{d}t &
-    \symup{b_n} & =\frac{2}{\symup{T}}\int_0^{\symup{T}}f(t)\sin{(n\frac{2\symup{\pi}}{\symup{T}}t)}\symup{d}t
+    a_n & =\frac{2}{T}\int_0^Tf(t)\cos{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t &
+    b_n & =\frac{2}{T}\int_0^{T}f(t)\sin{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t
     \label{eqn:Koeffizienten}
 \end{align}
-berechnen.Ein Anteil für n=0 entspricht dabei einem sogenannten Offset.
-Das heißt das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0
+berechnen. Ein Anteil für n=0 entspricht dabei einem sogenannten Offset.
+Das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0
 versetzten Wert.\\
 
 \noindent Diese Reihendarstellung des Signals konvergiert gleichmäßig
-gegen das zu beschreibende Signal f, wenn f stetig ist. An Stellen der Unstetigkeit
-tritt das Gibbsche Phänomen auf.Demnach kommt es im Bereich der Unsteigkeit zu einer
-Überschwingung, die keinen experimentellen Fehlern zugrunde liegt.
+gegen das zu beschreibende Signal $f(t)$, wenn $f(t)$ stetig ist. An Stellen der Unstetigkeit
+tritt das Gibbsche Phänomen auf. Demnach kommt es im Bereich der Unsteigkeit zu einer
+Überschwingung, die keinem experimentellen Fehlern zugrunde liegt.
 \cite{V351}
 \subsection{Fourier-Analyse}
-Bei der Fourier-Analyse wird ein zeitlich periodische Signal auf
-seine Frequenzanteile geprüft. Dazu wurden analoge und digitale Verfahren entworfen.
+Bei der Fourier-Analyse wird ein zeitlich periodisches Signal auf
+seine Frequenzanteile geprüft. Dazu werden analoge und digitale Verfahren entworfen.
 Ein analoges Verfahren basiert auf den Eigenschaften eines elektrischen Schwingkreises. Bei einer speziellen Frequenz,
-der Resonanzfrequenz, besitzt dieser einen merklichen Überschwinger. Legt man ein Signal an den Eingang einer solchen Schaltung
-und stellt die Grundfrequenz auf Resonanzfrequenz, kann man jetzt die Amplitudenverhältnisse der einzelnen Oberwellen zur Grundfrequenz messen.
+der Resonanzfrequenz, besitzt dieser einen merklichen Überschwinger. Wird ein Signal an den Eingang einer solchen Schaltung
+gelegt und die Grundfrequenz auf Resonanzfrequenz gestellt, können die Amplitudenverhältnisse der einzelnen Oberwellen zur Grundfrequenz gemessen werden.
 Da bei neu eingestellter Frequenz $\nu/n$, die n-te Oberwelle Resonanz am Ausgang hervorruft.\\
 
-\noindent Bei Digitalen Verfahren wird das Signal quantisiert. Mit der sogenannten
-Abtastfrequenz, die mindestens doppelt so groß wie die höchste zu messende Oberwellen Frequenz sein soll,
-werden Messwerte genommen und dann mit einer Fast-Fourier-Transformation in den
+\noindent Bei digitalen Verfahren wird das Signal quantisiert. Mit der sogenannten
+Abtastfrequenz, die mindestens doppelt so groß wie die höchste zu messende Oberwellenfrequenz sein soll,
+werden Messwerte genommen und dann mit einer Fast-Fourier-Transformation (FFT) in den
 Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden können.\\
 
-\noindent Amplitudenverhältnisse werden teilweise in Dezibel angegeben. Bei gegebener Referenzspannung
-$\symup{U_0}$ (z.B Spannung der Grundfrequenz) ist das Verhältnis in Dezibel[dB] gegeben durch
+\noindent Die Amplitudenverhältnisse werden teilweise in Dezibel angegeben. Bei gegebener Referenzspannung
+$\symup{U_0}$ (z.B. Spannung der Grundfrequenz) ist das Verhältnis in Dezibel [ dB ] gegeben durch
 \begin{equation}
-    \left|\frac{\symup{U_n}}{\symup{U_0}}\right|_{\symup{dB}}=20\log{\frac{\symup{U_n}}{\symup{U_0}}}
+    \left|\frac{U_n}{U_0}\right|_{\symup{dB}}=20\log{\frac{U_n}{U_0}},
     \label{eqn:Dezibel}
 \end{equation}
-, wobei mit dem 10er-Logarithmus gearbeitet wird. Das richtige Spannungsverhältnis aus einer dB Angabe
+wobei mit dem 10er-Logarithmus gearbeitet wird. Das richtige Spannungsverhältnis aus einer dB Angabe
 kann dann nach Umstellen mit
 \begin{equation}
-    \frac{\symup{U_n}}{\symup{U_0}}=10^{\frac{1}{20}\cdot\left|\frac{\symup{U_n}}{\symup{U_0}}\right|_{\symup{dB}}}
+    \frac{U_n}{U_0}=10^{\frac{1}{20}\cdot\left|\frac{U_n}{U_0}\right|_{\symup{dB}}}
 \end{equation}
-berechnet werden.
-\cite{V351}
-\cite{NeuesGP}
+berechnet werden \cite{V351}, \cite{NeuesGP}.
 \subsection{Fourier-Synthese}
 In der Fouriersynthese werden periodische Signale aus bereits bestehenden Oberwellen
 zusammengesetzt. Das heißt die Amplituden, also die Fourierkoeffizienten,
@@ -64,33 +62,33 @@ Ein Rechtecksignal der Art
 \begin{equation}
     f_0(t)=
     \begin{cases}
-        h  & 0\leq t < \frac{L}{2}  \\
-        -h & \frac{L}{2} \leq t < L \\
+        h  & 0\leq t < \frac{\symup{L}}{2}  \\
+        -h & \frac{\symup{L}}{2} \leq t <\symup{L} \\
         0  & \text{sonst}           \\
     \end{cases}
     \label{eqn:Rechteck}
 \end{equation}
 wird periodisch fortgesetzt, also um nL verschoben unendlich häufig addiert.
 Es ist sofort einzusehen, dass es keinen Offset gibt, da es gleiche Anteile über und
-unter Null besitzt. Außerdem ist das Signal eine ungerade Funktion um die 0,
-also gehen nur Sinusterme mit in die Rechnung ein. Für die Koeffizienten $\symup{b_n}$
+unter Null besitzt. Außerdem ist das Signal eine ungerade Funktion um die Y-Achse,
+also gehen nur Sinusterme mit in die Rechnung ein. Für die Koeffizienten $b_n$
 ergibt sich:
 \begin{equation}
-    \symup{b_n}=\frac{2}{\symup{L}}\left(\int_0^{\frac{\symup{L}}{2}}\symup{h}\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t+\int_{\frac{\symup{L}}{2}}^{\symup{L}}(-\symup{h})\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t\right)
-    =\frac{2\symup{h}}{\pi \symup{n}}\left(1-(-1)^n\right)
-    =\frac{4\symup{h}}{\pi(2\symup{n}-1)}  , n\in \symbb{N}
+    b_n=\frac{2}{\symup{L}}\left(\int_0^{\frac{\symup{L}}{2}}h\sin{\frac{2\symup{\pi}nt}{\symup{L}}}\symup{d}t+\int_{\frac{\symup{L}}{2}}^{\symup{L}}(-h)\sin{\frac{2\symup{\pi}nt}{\symup{L}}}\symup{d}t\right)
+    =\frac{2h}{\pi n}\left(1-(-1)^n\right)
+    =\frac{4h}{\pi(2n-1)}  , n\in \symbb{N}
     \label{eqn:Rechteck-Koeff}
 \end{equation}
 \subsubsection{Sägezahn}
 Eine Sägezahnfunktion mit fallender Flanke kann mit der Funktion
-$f(t)=\symup{h}(1-\frac{2\symup{t}}{\symup{L}}), 0\leq t<L$ beschrieben werden. Sie hat ebenfalls
+$f(t)=h(1-\frac{2t}{\symup{L}}), 0\leq t<L$ beschrieben werden. Sie hat ebenfalls
 keinen Offset, da sie linear abfällt und die Nullstelle genau in der Intervallmitte liegt. Die Funktion
 ist ebenfalls ungerade, weshalb nur Sinusterme auftauchen werden.
-Die Koeffizienten $\symup{b_n}$ ergeben sich dann mit partieller Integration zu:
+Die Koeffizienten $b_n$ ergeben sich dann mit partieller Integration zu:
 \begin{equation}
-    \symup{b_n}=\frac{2}{\symup{L}}\left(\int_0^{\symup{L}}\symup{h}\left(1-\frac{2t}{\symup{L}}\right)\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t\right)
-    =\frac{\symup{h}}{\pi \symup{n}}\left(1-1+2-\frac{2\symup{h}}{L}\left[\frac{\sin{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}}{\frac{2\symup{\pi}\symup{n}}{\symup{L}}}\right]_0^{\symup{L}}\right)
-    =\frac{2\symup{h}}{\pi\symup{n}}  , n\in \symbb{N}
+    b_n=\frac{2}{\symup{L}}\left(\int_0^{\symup{L}}h\left(1-\frac{2t}{\symup{L}}\right)\sin{\frac{2\symup{\pi}nt}{\symup{L}}}\symup{d}t\right)
+    =\frac{h}{\pi n}\left(1-1+2-\frac{2h}{L}\left[\frac{\sin{\frac{2\symup{\pi}nt}{\symup{L}}}}{\frac{2\symup{\pi}n}{\symup{L}}}\right]_0^{\symup{L}}\right)
+    =\frac{2h}{\pi n}  , n\in \symbb{N}
     \label{eqn:Sägezahn-Koeff}
 \end{equation}
 \subsubsection{Dreieck}
@@ -98,23 +96,23 @@ Ein Dreieckssignal der Art
 \begin{equation}
     f_0(t)=
     \begin{cases}
-        (t+\frac{\symup{L}}{2})\frac{2}{\symup{L}}\symup{h} & \frac{-\symup{L}}{2}\leq t < 0 \\
-        (\frac{\symup{L}}{2}-t)\frac{2}{\symup{L}}\symup{h} & 0 \leq t < \frac{\symup{L}}{2} \\
+        (t+\frac{\symup{L}}{2})\frac{2}{\symup{L}}h & \frac{-\symup{L}}{2}\leq t < 0 \\
+        (\frac{\symup{L}}{2}-t)\frac{2}{\symup{L}}h & 0 \leq t < \frac{\symup{L}}{2} \\
         0                                                   & \text{sonst}                   \\
     \end{cases}
     \label{eqn:Dreieck}
 \end{equation}
-wird periodisch fortgesetzt. Das Signal besitzt einen Offset. Da das Signal dauerhaft
+wird periodisch fortgesetzt. Das Signal besitzt einen Offset, da das Signal dauerhaft
 größer 0 ist. Außerdem ist das Signal gerade um 0. Daher gehen nur Cosinusfunktionen
-in die Reihe mit ein. Im Folgenden wird der Offset ignoriert, sondern nur die schwingenden Anteile
-berücksichtigt. Da nur diese für die Dreieckform relevant sind. Die Koeffizienten ergeben
+in die Reihe mit ein. Im Folgenden wird der Offset ignoriert. Es werden nur die schwingenden Anteile
+berücksichtigt, da nur diese für die Dreieckform relevant sind. Die Koeffizienten ergeben
 sich mit partieller Integration und der Symmetrie zur Intervallmitte zu
 \begin{equation}
     \begin{split}
-        \symup{b_n}&=\frac{2}{\symup{L}}\int_{\frac{-\symup{L}}{2}}^{\frac{\symup{L}}{2}}f_0(t)\cos{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t
-        =\frac{4}{\symup{L}}\int_0^{\frac{\symup{L}}{2}}(\frac{\symup{L}}{2}-t)\frac{2}{\symup{L}}\symup{h}\cos{\frac{2\symup{\pi}\symup{n}t}{\symup{L}}}\symup{d}t\\
-        &=\frac{2\symup{h}}{(\pi \symup{n})^2}\left(1-(-1)^n\right)
-        =\frac{4\symup{h}}{(\pi(2\symup{n}-1))^2}  , n\in \symbb{N}
+        b_n&=\frac{2}{\symup{L}}\int_{\frac{-\symup{L}}{2}}^{\frac{\symup{L}}{2}}f_0(t)\cos{\frac{2\symup{\pi}nt}{\symup{L}}}\symup{d}t
+        =\frac{4}{\symup{L}}\int_0^{\frac{\symup{L}}{2}}(\frac{\symup{L}}{2}-t)\frac{2}{\symup{L}}h\cos{\frac{2\symup{\pi}nt}{\symup{L}}}\symup{d}t\\
+        &=\frac{2h}{(\pi n)^2}\left(1-(-1)^n\right)
+        =\frac{4h}{(\pi(2n-1))^2}  , n\in \symbb{N}
     \end{split}
     \label{eqn:Dreieck-Koeff}
 \end{equation}
