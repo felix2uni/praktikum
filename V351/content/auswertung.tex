@@ -1,154 +1,132 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+
 \subsection{Fourier-Analyse}
 \subsubsection{Messdaten}
 
 Die mit dem Oszilloskop gemessenen Werte für Frequenz und Amplitude sind in den Tabellen 1 bis 3 zu finden.
-Wobei 2 und 3 eine Wiederholung der Sägezahnfunktion sind.
+Wobei die Daten in den Tabellen 2 und 3 eine Wiederholung der Sägezahnfunktion da bei der ersten Messung sehr starke Fluktuationen wahrzunehmen waren.
 
 % Siehe \autoref{fig:square}!
 
-\begin{table}[h!]
-  \begin{center}
-    \begin{tabular}{ |c|c| }
-      \hline
-      Frequenz/Hz & Amplitude/dB \\
-      \hline
-      20          & -1.79        \\
-      60          & -11          \\
-      100         & -15          \\
-      140         & -17.8        \\
-      180         & -19.8        \\
-      220         & -21.4        \\
-      260         & -23.4        \\
-      300         & -24.6        \\
-      340         & -26.2        \\
-      380         & -27.4        \\
-      \hline
-    \end{tabular}
-    \caption{\label{rechteck-table} Rechteckwelle.}
-  \end{center}
-\end{table}
-
-
-\begin{table}[h!]
-  \begin{center}
-    \begin{tabular}{ |c|c|c| }
-      \hline
-      Frequenz/Hz & Amplitude/dB \\
-      \hline
-      20          & -6.59        \\
-      40          & -13.0        \\
-      60          & -16.6        \\
-      80          & -19.8        \\
-      100         & -22.2        \\
-      120         & -24.6        \\
-      140         & -23.8        \\
-      160         & -24.6        \\
-      180         & -26.2        \\
-      200         & -26.6        \\
-      \hline
-    \end{tabular}
-    \caption{\label{ramp-1-table}Sägezahnwelle (Messung 1).}
-  \end{center}
-\end{table}
-
-
-
-\begin{table}[h!]
-  \begin{center}
-    \begin{tabular}{ |c|c|c| }
-      \hline
-      Frequenz/Hz & Amplitude/dB \\
-      \hline
-      20          & -7.79        \\
-      40          & -12.6        \\
-      60          & -17          \\
-      80          & -19          \\
-      100         & -21          \\
-      120         & -23          \\
-      140         & -23.8        \\
-      160         & -25.8        \\
-      180         & -26.2        \\
-      200         & -27.8        \\
-      \hline
-    \end{tabular}
-    \caption{\label{ramp-2-table}Sägezahnwelle (Messung 2).}
-  \end{center}
-\end{table}
 
 \subsubsection{Analyse}
 
-Zur Bestimmung der Abhängigkeiten werden Frequenz und Amplitude doppelt logarithmisch gegeneinander aufgetragen
+Zur Bestimmung der Abhängigkeiten werden die Frequenz und die auf die Amplitude der ersten Oberwelle
+normierten Amplituden gegeneinander aufgetragen.
+Dieses Spannungsverhältnis kann direkt, mit Hilfe der oben genannten Formel, aus den in dB gemessenen Amplituden berechnen werden, was eine explizite Spannungsberechnung überflüssig macht.\\
+Zur Bestimmung der Abhängigkeiten werden Frequenz und Normierte Amplitude doppelt logarithmisch gegeneinander aufgetragen
 und dann mit einer Linearen Funktion der Form
-
 \[
   y=cx+b
 \]
-
-gefittet.
-
-Die Steigung der gefitteten Gleichung gibt dann die exponentielle Abhängigkeit der Amplituden zu den Frequenzen an.
-
-Für die Rechteckfunktion \autoref{fig:square} ergibt sich eine Steigung von -0.99\pm4.
-Somit haben wir ungefähr eine $\frac{1}{n}$ Abhängigkeit.
-
-\begin{figure}
+gefittet. Die Steigung der gefitteten Gleichung gibt dann die exponentielle Abhängigkeit der normierten Amplituden zu den Frequenzen an.
+Für die Rechteckfunktion \autoref{fig:square} ergibt sich eine Steigung von $−0.986$.\\
+Die Steigung der Ausgleichsgeraden für die Sägezahnfunktionen ist bei \autoref{fig:ramp1} $-1.059$ und bei \autoref{fig:ramp2} $-1.049$.
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| }
+      \hline
+      n  & Frequenz / Hz & Amplitude / dB & Normierte Spannung $\frac{U_n}{U_1}$ & Theoriewert $\frac{1}{n}$ & Abweichung / \% \\
+      \hline
+      1  & 20            & -1.79          & 1                                    & 1                         & 0               \\
+      3  & 60            & -11            & 0.346                                & 0.333                     & -3.755          \\
+      5  & 100           & -15            & 0.219                                & 0.2                       & -8.477          \\
+      7  & 140           & -17.8          & 0.158                                & 0.143                     & 9.759           \\
+      9  & 180           & -19.8          & 0.125                                & 0.111                     & -11.640         \\
+      11 & 220           & -21.4          & 0.104                                & 0.091                     & -13.082         \\
+      13 & 260           & -23.4          & 0.083                                & 0.077                     & -7.412          \\
+      15 & 300           & -24.6          & 0.072                                & 0.067                     & -7.868          \\
+      17 & 340           & -26.2          & 0.060                                & 0.059                     & -2.265          \\
+      19 & 380           & -27.4          & 0.052                                & 0.053                     & 0.403           \\
+      \hline
+    \end{tabular}
+    \caption{\label{rechteck-table} Die Messdaten der Rechteckschwingung.}
+  \end{center}
+\end{table}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| }
+      \hline
+      n  & Frequenz / Hz & Amplitude / dB & Normierte Spannung $\frac{U_n}{U_1}$ & Theoriewert $\frac{1}{n}$ & Abweichung / \% \\
+      \hline
+      1  & 20            & -6.59          & 1                                    & 1                         & 0               \\
+      2  & 40            & -13.0          & 0.478                                & 0.529                     & 10.737          \\
+      3  & 60            & -16.6          & 0.316                                & 0.360                     & 13.973          \\
+      4  & 80            & -19.8          & 0.219                                & 0.273                     & 24.804          \\
+      5  & 100           & -22.2          & 0.166                                & 0.220                     & 32.422          \\
+      6  & 120           & -24.6          & 0.126                                & 0.184                     & 46.065          \\
+      7  & 140           & -23.8          & 0.138                                & 0.158                     & 14.516          \\
+      8  & 160           & -24.6          & 0.126                                & 0.138                     & 10.111          \\
+      9  & 180           & -26.2          & 0.105                                & 0.123                     & 17.874          \\
+      10 & 200           & -26.6          & 0.1                                  & 0.111                     & 11.239          \\
+      \hline
+    \end{tabular}
+    \caption{\label{ramp-1-table}Die Messdaten der des ersten Durchführung der Sägezahnfunktion.}
+  \end{center}
+\end{table}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c| }
+      \hline
+      n  & Frequenz / Hz & Amplitude / dB & Normierte Spannung $\frac{U_n}{U_1}$ & Theoriewert $\frac{1}{n}$ & Abweichung / \% \\
+      \hline
+      1  & 20            & -7.79          & 1                                    & 1                         & 0               \\
+      2  & 40            & -12.6          & 0.575                                & 0.529                     & -7.893          \\
+      3  & 60            & -17            & 0.346                                & 0.360                     & 3.945           \\
+      4  & 80            & -19            & 0.275                                & 0.273                     & -0.865          \\
+      5  & 100           & -21            & 0.219                                & 0.220                     & 0.452           \\
+      6  & 120           & -23            & 0.174                                & 0.184                     & 5.815           \\
+      7  & 140           & -23.8          & 0.158                                & 0.158                     & -0.26           \\
+      8  & 160           & -25.8          & 0.126                                & 0.138                     & 10.111          \\
+      9  & 180           & -26.2          & 0.120                                & 0.123                     & 2.664           \\
+      10 & 200           & -27.8          & 0.100                                & 0.111                     & 11.239          \\
+      \hline
+    \end{tabular}
+    \caption{\label{ramp-2-table}Die Messdaten der zweiten Durchführung der Sägezahnfunktion.}
+  \end{center}
+\end{table}
+\begin{figure}[H]
   % \centering
   \includegraphics[width=\textwidth]{square.pdf}
   \caption{Lineare Regression der Rechteckschwingung.}
   \label{fig:square}
 \end{figure}
-
-Die Steigung der Ausgleichsgeraden für Sägezahnfunktionen
-\autoref{fig:ramp1}+\autoref{fig:ramp2} ist mit $-1.02\pm4$
-erneut ziemlich nah an dem theoretischen wert von $\frac{1}{n}$.
-
-\begin{figure}
+\begin{figure}[H]
   % \centering
   \includegraphics[width=\textwidth]{ramp1.pdf}
   \caption{Lineare Regression der Sägezahnfunktion (Messung 1).}
   \label{fig:ramp1}
 \end{figure}
-
-
-\begin{figure}
+\begin{figure}[H]
   % \centering
   \includegraphics[width=\textwidth]{ramp2.pdf}
   \caption{Lineare Regression der Sägezahnfunktion (Messung 2).}
   \label{fig:ramp2}
 \end{figure}
-
-
 \pagebreak
 \subsection{Fourier-Synthese}
-
-Bei der Fourier-Synthese wurden die Die Funktionen (Rechteck und Sägezahn) bis zur 10. Oberwelle synthetisiert.
-Die 1. Oberwelle hatte dabei eine Amplitude von $v_{ppv}660mv$.
-Bei der Rechtecks und Sägezahnfunktion kann man starke Auslenkungen im Verlauf der Kurve Sehen \autoref{img:square} \autoref{img:ramp} (die Dreiecksfunktion \autoref{img:triangle} hat dieses Problem nicht obwohl hier nur bis zur dritten Oberwelle synthetisiert werden konnte).
-
-
-\begin{figure}
+Bei der Fourier-Synthese wurden die Die Funktionen (Rechteck und Sägezahn) bis zur 10. Oberwelle synthetisiert sowie die Dreiecksfunktion bis zur 3. Oberwelle da aufgrund der $\frac{1}{n^2}$ die Amplituden zu klein wurden um sie einzustellen.
+Die 1. Oberwelle hat dabei jeweils eine Amplitude von $v_{ppv} = 660mV$.
+Bei der Rechtecks und Sägezahnfunktion kann man starke Auslenkungen im Verlauf der Kurve sehen [\autoref{img:square} und \autoref{img:ramp}].\\
+Dies ist bei der Dreiecksfunktion nicht zu beobachten.
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{content/images/rechteck_1.jpg}
-  \caption{Rechteckfunktion (Synthese bis zur 10. Oberwelle).}
+  \caption{Eine Synthese der Rechteckfunktion bis zur 10. Oberwelle.}
   \label{img:square}
 \end{figure}
-
-
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{content/images/dreieck_2.jpg}
-  \caption{Dreiecksfunktion (Synthese bis zur 3. Oberwelle).}
+  \caption{Eine Synthese der Dreiecksfunktion bis zur 3. Oberwelle.}
   \label{img:triangle}
 \end{figure}
-
-
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{content/images/saegetzahn_1.jpg}
-  \caption{Sägezahnfunktion (Synthese bis zur 10. Oberwelle).}
+  \caption{Eine Synthese der Sägezahnfunktion bis zur 10. Oberwelle.}
   \label{img:ramp}
 \end{figure}
 
