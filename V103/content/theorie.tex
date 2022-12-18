@@ -1,9 +1,10 @@
 \section{Zielsetzung}
-Ziel des Versuchs ist es das Elastizitätsmodul eines Metalls, in diesem Fall Kupfer,
+Ziel des Versuchs ist es den Elastizitätsmodul eines Metalls, in diesem Fall Kupfer,
 zu bestimmen. Dafür soll die Durchbiegung von Stäben untersucht werden.
 \section{Theorie}
+\label{sec:Theorie}
 \subsection{Festkörpereigenschaft: Elastizitätsmodul}
-Das Elastizitätsmodul ist eine Eigenschaft eines Festkörpers, die sein Dehnverhalten bei einwirkenden äußeren Kräften
+Der Elastizitätsmodul ist eine Eigenschaft eines Festkörpers, die sein Dehnverhalten bei einwirkenden äußeren Kräften
 auf ihre Flächennormale beschreibt. Diese Kraft die pro Flächeneinheit auf den Festkörper wirkt bezeichnet man
 als Spannung, der Anteil der normal zur Fläche wirkt  als Normalspannung $\sigma$. Das Resultat einer solchen äußeren
 Kraft auf eine Oberfläche des Festkörpers ist eine Verformung. Eine Normalspannung bewirkt dabei nur eine Ausdehnung in eine Dimension.
@@ -13,11 +14,85 @@ auf die Oberfläche wirkt. Es ergibt sich ein Zusammenhang
     \sigma=E\cdot \frac{\Delta L}{L} \text{,}
     \label{eq:Hook}
 \end{equation}
-wobei $\frac{\Delta L}{L}$ die relative Längenausdehnung und $E$ das Elastizitätsmodul beschreibt. Es lässt sich erkennen,
-dass das Elastizitätsmodul die Proportionalität zwischen wirkender Spannung und der Längenausdehnung beschreibt.
-Diese beiden Messgrößen würden also ausreichen um das Elastizitätsmodul zu bestimmen. In diesem Versuch wird diese Längenausdehnung
+wobei $\frac{\Delta L}{L}$ die relative Längenausdehnung und $E$ den Elastizitätsmodul beschreibt. Es lässt sich erkennen,
+dass der Elastizitätsmodul die Proportionalität zwischen wirkender Spannung und der Längenausdehnung beschreibt.
+Diese beiden Messgrößen würden also ausreichen um den Elastizitätsmodul zu bestimmen. In diesem Versuch wird diese Längenausdehnung
 indirekt über eine Biegung gemessen.\\
 \noindent Der theoretische Wert des Elastizitätsmodul bei Kupfer beträgt $\qty{120}{\giga\pascal}$ \cite{Tabellen}.
-\label{sec:Theorie}
-
+\subsection{Durchbiegung eines homogenen Stabes bei einseitiger Einspannung}
+Eine Biegung tritt auf, wenn an einer Seite eines Festkörpers (z.B. ein Stab) ein Drehmoment wirkt.
+Das Drehmoment wirkt zwar erstmal tangential zur Oberfläche. Da der Festkörper allerdings einseitig eingespannt ist, kann eine tangentiale
+Dehnung des Festkörper nur durch eine Längenausdehnung/Stauchung im Festkörper herbeigeführt werden. Diese Dehnungen im Festkörper sind dann wiederum vom 
+Elastizitätsmodul abhängig. Daher lässt sich auch die Biegung eines Stabes auf seine Dehnungseigenschaft zurückführen.\\
+\begin{figure}
+    \centering
+    \includegraphics[]{content/Stab.png}
+    \caption{Durchbiegung eines einseitig eingespannten Stabs \cite{V103}}
+    \label{fig:Stab}
+\end{figure}
+\noindent In Abbildung \ref{fig:Stab} ist die Durchbiegung schematisch dargestellt. $L$ ist dabei die Entfernung von Einspannung und angreifender
+Kraft. $D(x)$ beschreibt die relative Verschiebung eines Oberflächenpunktes bei Durchbiegung in Abhängigkeit von der Entfernung $x$ zur 
+Einspannung. Q ist eine beliebige Querschnittsfläche im Stab und die gestrichelte Linie beschreibt eine sogenannte neutrale Faser.
+In dieser neutralen Faser tritt keine Spannung auf und damit auch keine Dehnung. Darüber treten Zugspannungen auf und das Material dehnt sich.
+Darunter treten Druckspannungen auf und das Material wird gestaucht. In jeder Querschnittsfläche $Q$ bewirken die beiden entgegengesetzten
+Spannungen $\sigma$ integriert über Q ein Drehmoment auf die Fläche. Dieses Drehmoment wird durch die wirkende Kraft $F$ mit Hebelarm $L-x$ hervorgerufen.
+Da $M_\sigma=M_F$ ist, ergibt sich als Zusammenhang zwischen $\sigma$ und $F$
+\begin{equation}
+    \int_Q y\sigma(y)\symup{d}q=F(L-x) \text{.}
+    \label{eq:Momente}
+\end{equation}
+Aus Gleichung \eqref{eq:Hook} ergibt sich mit einer kleinen  Längenänderung der Faser $\frac{\delta x}{\Delta x}$
+$\sigma(y)=E\frac{\delta x}{\Delta x}$. Für kleine Änderungen gilt $\delta x = y \Delta x \mathbin{/}R$
+und $\frac{1}{R}=\frac{\symup{d}^2D}{\symup{d}x^2}$ ergibt sich ein Zusammenhang zwischen angreifender Kraft und 
+Durchbiegung D zu
+\begin{equation}
+    E\frac{\symup{d}^2D}{\symup{d}x^2}\int_Q y^2 \symup{d}q=F(L-x) \text{.}
+    \label{eq:Biegungs DGL}
+\end{equation}
+Dabei wird ein Flächenträgheitsmoment $I=\int_Q y^2 \symup{d}q(y)$ definiert. Für eine quadratische Fläche mit Grundseite $a$ ergibt sich
+\begin{equation}
+    I=\int_{-\frac{a}{2}}^{\frac{a}{2}}\symup{d}x\int_{-\frac{a}{2}}^{\frac{a}{2}} y^2 \symup{d}y=\frac{a^4}{12}\text{.}
+    \label{eq:I_Rechteck}
+\end{equation}
+Für eine runde Grundfläche mit Radius $a$ ergibt sich $y^2=r^2sin^2(\varphi)$ und damit
+\begin{equation}
+    I=\int_{0}^{2\pi}sin^2(\varphi)\symup{d}\varphi\int_{0}^{a} r^2 \cdot r\symup{d}r=\frac{\pi a^4}{4}\text{.}
+    \label{eq:I_Kreis}
+\end{equation}
+Bei zweifacher Integration von Gleichung \eqref{eq:Biegungs DGL} und umstellen nach $D(x)$ ergibt
+sich als Ausdruck für die Durchbiegung $D$
+\begin{equation}
+    D(x)=\frac{F}{2EI}(Lx^2-\frac{x^3}{3}) \text{.}
+    \label{eq:Biegung1}
+\end{equation}
+Dementsprechend ist $k=\frac{F}{2EI}$ eine Proportionalitätskonstante zwischen $D$ und $(Lx^2-\frac{x^3}{3})$.
+Damit ergibt sich $E$ aus dieser Konstante durch
+\begin{equation}
+    E=\frac{F}{2kI}=\frac{m\cdot g}{2kI} \text{.}
+    \label{eq:1Konstante}
+\end{equation}
+\subsection{Durchbiegung eines homogenen Stabes bei zweiseitiger Einspannung}
+Die Herleitung für die Durchbiegung bei zweiseitiger Einspannung läuft vollkommen analog.
+Der einzige Unterschied besteht darin, dass sich die zu tragende Gewichtskraft auf beide Hebelarme, links und rechts der eingehängten Masse, aufteilt.
+Dadurch wirkt jetzt auf den Hebelarm im Bereich $0\leq x \leq L/2 $ ein Drehmoment von $M_F=\frac{-F}{2}x$ 
+und im Bereich $L/2\leq x \leq L $ ein Drehmoment $M_F=\frac{-F}{2}(L-x)$.
+Damit ergibt sich in den beiden Gebieten als Ausdruck für die Durchbiegung
+\begin{equation}
+    D(x)=
+    \begin{cases}
+        \frac{F}{48EI}(3L^2x-4x^3), & 0\leq x\leq\frac{L}{2}\\
+        \frac{F}{48EI}{4x^3-12Lx^2+9L^2x-L^3}, & \frac{L}{2}\leq x\leq L
+        \label{Biegung2}
+    \end{cases}
+    \text{.}
+\end{equation}
+Dabei ist $x$ die Distanz zu einem Einspannungspunkt. Wenn die Distanz zur eingehängten Masse gemessen wird,
+ergibt sich der theoretische Verlauf der Biegung zu $D'(x)=D(x+\frac{L/2})$. Hierbei ist $x$ die Entfernung zur Masse.
+$L/2$ ist für beide Intervalle die Entfernung zwischen Masse und Einspannung auf der jeweiligen Seite. Dadurch ist $L$, wenn die Masse
+nicht mittig eingespannt ist, nicht zwangsläufig die Länge des Stabs. Das ist aber nicht wichtig. Wichtig ist nur die jeweilige Entfernung zwischen
+eingehängter Masse und Einspannungspunkt auf die das Drehmoment wirkt. Das Elastizitätsmodul bestimmt sich aus der Proportioanlität zu 
+\begin{equation}
+    E=\frac{F}{48kI}=\frac{m\cdot g}{48kI} \text{.}
+    \label{eq:2Konstante}
+\end{equation}
 \cite{V103}
