@@ -1,15 +1,15 @@
 \section{Zielsetzung}
-Ziel des Versuchs ist es den Elastizitätsmodul eines Metalls, in diesem Fall Kupfer,
+Ziel des Versuches ist es den Elastizitätsmodul eines Metalls, in diesem Fall Kupfer,
 zu bestimmen. Dafür soll die Durchbiegung von Stäben untersucht werden.
 \section{Theorie}
 \label{sec:Theorie}
 \subsection{Festkörpereigenschaft: Elastizitätsmodul}
 Der Elastizitätsmodul ist eine Eigenschaft eines Festkörpers, die sein Dehnverhalten bei einwirkenden äußeren Kräften
-auf ihre Flächennormale beschreibt. Diese Kraft die pro Flächeneinheit auf den Festkörper wirkt bezeichnet man
-als Spannung, der Anteil der normal zur Fläche wirkt  als Normalspannung $\sigma$. Das Resultat einer solchen äußeren
-Kraft auf eine Oberfläche des Festkörpers ist eine Verformung. Eine Normalspannung bewirkt dabei nur eine Ausdehnung in eine Dimension.
-Bei kleinen Auslenkungen gilt auch hier das Hookesche Gesetz, nachdem eine kleine Längenausdehnung in eine rücktreibende Normalspannung
-auf die Oberfläche wirkt. Es ergibt sich ein Zusammenhang 
+auf seine Flächennormale beschreibt. Diese Kraft die pro Flächeneinheit auf den Festkörper wirkt, bezeichnet man
+als Spannung. Wobei der Anteil, der normal zur Fläche wirkt, als Normalspannung $\sigma$ bezeichnet wird. Das Resultat einer solchen äußeren
+Kraft, die auf einer Oberfläche des Festkörpers angreift, ist eine Verformung. Eine Normalspannung bewirkt dabei nur eine Ausdehnung in eine Dimension.
+Bei kleinen Auslenkungen gilt auch hier das Hookesche Gesetz, nachdem eine kleine Längenausdehnung in einer rücktreibenden Normalspannung
+auf die Oberfläche resultiert. Es ergibt sich ein Zusammenhang 
 \begin{equation}
     \sigma=E\cdot \frac{\Delta L}{L} \text{,}
     \label{eq:Hook}
@@ -18,11 +18,12 @@ wobei $\frac{\Delta L}{L}$ die relative Längenausdehnung und $E$ den Elastizit�
 dass der Elastizitätsmodul die Proportionalität zwischen wirkender Spannung und der Längenausdehnung beschreibt.
 Diese beiden Messgrößen würden also ausreichen um den Elastizitätsmodul zu bestimmen. In diesem Versuch wird diese Längenausdehnung
 indirekt über eine Biegung gemessen.\\
-\noindent Der theoretische Wert des Elastizitätsmodul bei Kupfer beträgt $\qty{120}{\giga\pascal}$ \cite{Tabellen}.
+\noindent Der theoretische Wert des Elastizitätsmodul bei Kupfer beträgt $\qty{120}{\giga\pascal}=\qty{1.2e11}{\newton\per\meter\squared}$
+Die Dichte von  Kupfer ist $\rho=\qty{8.92}{\gram\per\centi\meter\squared}$ \cite{Tabellen}.
 \subsection{Durchbiegung eines homogenen Stabes bei einseitiger Einspannung}
 Eine Biegung tritt auf, wenn an einer Seite eines Festkörpers (z.B. ein Stab) ein Drehmoment wirkt.
-Das Drehmoment wirkt zwar erstmal tangential zur Oberfläche. Da der Festkörper allerdings einseitig eingespannt ist, kann eine tangentiale
-Dehnung des Festkörper nur durch eine Längenausdehnung/Stauchung im Festkörper herbeigeführt werden. Diese Dehnungen im Festkörper sind dann wiederum vom 
+Das Drehmoment wirkt dabei erstmal tangential zur Oberfläche. Da der Festkörper allerdings einseitig eingespannt ist, kann eine tangentiale
+Dehnung des Festkörpers nur durch eine Längenausdehnung/Stauchung im Festkörper herbeigeführt werden. Diese Dehnungen im Festkörper sind dann wiederum vom 
 Elastizitätsmodul abhängig. Daher lässt sich auch die Biegung eines Stabes auf seine Dehnungseigenschaft zurückführen.\\
 \begin{figure}
     \centering
@@ -41,10 +42,10 @@ Da $M_\sigma=M_F$ ist, ergibt sich als Zusammenhang zwischen $\sigma$ und $F$
     \int_Q y\sigma(y)\symup{d}q=F(L-x) \text{.}
     \label{eq:Momente}
 \end{equation}
-Aus Gleichung \eqref{eq:Hook} ergibt sich mit einer kleinen  Längenänderung der Faser $\frac{\delta x}{\Delta x}$
+Aus Gleichung \eqref{eq:Hook} ergibt sich, mit einer kleinen  Längenänderung der Faser $\frac{\delta x}{\Delta x}$,
 $\sigma(y)=E\frac{\delta x}{\Delta x}$. Für kleine Änderungen gilt $\delta x = y \Delta x \mathbin{/}R$
-und $\frac{1}{R}=\frac{\symup{d}^2D}{\symup{d}x^2}$ ergibt sich ein Zusammenhang zwischen angreifender Kraft und 
-Durchbiegung D zu
+und $\frac{1}{R}=\frac{\symup{d}^2D}{\symup{d}x^2}$. Damit ergibt sich der Zusammenhang zwischen angreifender Kraft und 
+Durchbiegung $D$ zu
 \begin{equation}
     E\frac{\symup{d}^2D}{\symup{d}x^2}\int_Q y^2 \symup{d}q=F(L-x) \text{.}
     \label{eq:Biegungs DGL}
@@ -87,7 +88,7 @@ Damit ergibt sich in den beiden Gebieten als Ausdruck für die Durchbiegung
     \text{.}
 \end{equation}
 Dabei ist $x$ die Distanz zu einem Einspannungspunkt. Wenn die Distanz zur eingehängten Masse gemessen wird,
-ergibt sich der theoretische Verlauf der Biegung zu $D'(x)=D(x+\frac{L/2})$. Hierbei ist $x$ die Entfernung zur Masse.
+ergibt sich der theoretische Verlauf der Biegung zu $D'(x)=D(x+\frac{L}{2})$. Hierbei ist $x$ die Entfernung zur Masse.
 $L/2$ ist für beide Intervalle die Entfernung zwischen Masse und Einspannung auf der jeweiligen Seite. Dadurch ist $L$, wenn die Masse
 nicht mittig eingespannt ist, nicht zwangsläufig die Länge des Stabs. Das ist aber nicht wichtig. Wichtig ist nur die jeweilige Entfernung zwischen
 eingehängter Masse und Einspannungspunkt auf die das Drehmoment wirkt. Das Elastizitätsmodul bestimmt sich aus der Proportioanlität zu 
