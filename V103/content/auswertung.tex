@@ -11,47 +11,94 @@ Die Stäbe bestehen vermutlich beide aus Kupfer.
 %Hier die Flächenträgheitsmomente nach Formel für I aus der Theorie bestimmen.
 %Mit der Dichte, dem Volumen und der Masse von den Stäben bestätigen, dass es sich bei dem Material tatsächlich um
 %Kupfer handelt.
+Das Flächenträgheitsmoment des Stabes mit der runden Grundfläche lässt sich mithilfe von Gleichung \eqref{eq:I_Kreis} und dem Radius $a=\frac{1}{2}=\frac{0.01}{2}m=0.005m$ berechnen.
+Somit ist
+\begin{equation}
+  I_{Kreis}=\frac{\pi a^4}{4}=\frac{\pi\times 0.005^4}{4}m^4=4.909\times 10^{-10}m^4\text{.}
+\end{equation}
+Das Flächenträgheitsmoment des Stabes mit der quadratischen Grundfläche lässt sich nach Gleichung \eqref{eq:I_Rechteck} berechnen und ergibt
+\begin{equation}
+  I_{Quadrat}=\frac{a^4}{12}=\frac{0.01^4}{12}m^4=8.\overline{3}\times 10^{-10}m^4
+\end{equation}
+
+Um zu zeigen, dass es sich bei dem Material der Stäbe tatsächlich um Kupfer handelt werden die Dichten der Stäbe berechnet und mit dem Literaturwert von Kupfer verglichen.
+Die Dichte eines Körpers lässt sich mithilfe
+\begin{equation}
+  \rho=\frac{m}{V}
+\end{equation}
+berechnen. Somit ist die Dichte des runden Stabes
+\begin{equation}
+  \rho_{Rund}=\frac{m}{\pi \times a^2 \times L}=\frac{0.4123}{\pi \times 0.005^2 \times 0.591}\frac{kg}{m^3}=8882.52\frac{kg}{m^3}=8.88252\frac{g}{cm^3}
+\end{equation}
+und die Dichte des Stabes mit quadratischer Grundfläche
+\begin{equation}
+  \rho_{Quadrat}=\frac{m}{a^2 \times L}=\frac{0.5353}{0.01^2 \times 0.601}\frac{kg}{m^3}=8906.82\frac{kg}{m^3}=8.90682\frac{g}{cm^3}\text{.}
+\end{equation}
+Da diese beiden Werte relativ nah am Theoriewert $\rho=\qty{8.92}{\gram\per\centi\meter\squared}$ von Kupfer liegen werden im folgenden Literaturwerte von Kupfer zu Vergleichszwecken genutzt.
 \subsection{Einseitig eingespannter Stab}
 
-\subsubsection{Messewrte der Auslenkung}
-An den eingespannten Stab ist in einem Abstand von $l=\qty{}{\centi\meter}$ eine Masse von $m=\qty{752.3(0.1)}{\gram}$
-angehängt worden. In Tabelle \ref{tab:Einseitig} sind die Werte für die Durchbiegung $\Delta D$ eines 
+\subsubsection{Messwerte der Auslenkung}
+An den eingespannten Stab ist in einem Abstand von $l=\qty{53.5}{\centi\meter}$ eine Masse von $m=\qty{752.3(0.1)}{\gram}$
+angehängt worden. In Tabelle \ref{tab:Einseitig} sind die Werte für die Durchbiegung $\Delta D$ eines
 Quaderförmigen Stabes und eines zylinderförmigen Stabes in Abhängigkeit von der Entfernung zum Einspannpunkt
 gemessen worden.
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \caption{Durchbiegung in Abhängigkeit der Entfernung zum Einspannpunkt}
   \label{tab:Einseitig}
   \begin{tabular}{S[table-format=2.0] S[table-format=4.0] S[table-format=4.0]}
-  \toprule
-  {$\Delta x\mathbin{/}\unit{\centi\meter}$}&{Quader: $\Delta D\mathbin{/}\unit{\micro\meter}$}&{Zylinder: $\Delta D\mathbin{/}\unit{\micro\meter}$}\\
-  \midrule
-    3  & 0    & 50   \\
-    6  & 100  & 160  \\
-    8  & 130  & 240  \\
-    10 & 230  & 350  \\
-    13 & 320  & 550  \\
-    15 & 450  & 710  \\
-    18 & 630  & 980  \\
-    20 & 750  & 1170 \\
-    23 & 960  & 1520 \\
-    25 & 1100 & 1750 \\
-    28 & 1340 & 2100 \\
-    30 & 1520 & 2320 \\
-    33 & 1800 & 2780 \\
-    35 & 2010 & 3020 \\
-    38 & 2260 & 3480 \\
-    40 & 2460 & 3760 \\
-    43 & 2750 & 4290 \\
-    45 & 2940 & 4450 \\
-    48 & 3230 & 4980 \\
+    \toprule
+    {$\Delta x\mathbin{/}\unit{\centi\meter}$} & {Quader: $\Delta D\mathbin{/}\unit{\micro\meter}$} & {Zylinder: $\Delta D\mathbin{/}\unit{\micro\meter}$} \\
+    \midrule
+    3                                          & 0                                                  & 50                                                   \\
+    6                                          & 100                                                & 160                                                  \\
+    8                                          & 130                                                & 240                                                  \\
+    10                                         & 230                                                & 350                                                  \\
+    13                                         & 320                                                & 550                                                  \\
+    15                                         & 450                                                & 710                                                  \\
+    18                                         & 630                                                & 980                                                  \\
+    20                                         & 750                                                & 1170                                                 \\
+    23                                         & 960                                                & 1520                                                 \\
+    25                                         & 1100                                               & 1750                                                 \\
+    28                                         & 1340                                               & 2100                                                 \\
+    30                                         & 1520                                               & 2320                                                 \\
+    33                                         & 1800                                               & 2780                                                 \\
+    35                                         & 2010                                               & 3020                                                 \\
+    38                                         & 2260                                               & 3480                                                 \\
+    40                                         & 2460                                               & 3760                                                 \\
+    43                                         & 2750                                               & 4290                                                 \\
+    45                                         & 2940                                               & 4450                                                 \\
+    48                                         & 3230                                               & 4980                                                 \\
     \bottomrule
   \end{tabular}
 \end{table}
-
+Für die Bestimmung des Elastizitätsmoduls wird nun $\Delta x$ gegen $Lx^2 -\frac{x^3}{3}$ aufgetragen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rundeinseitg.pdf}
+  \caption{Durchbiegung eines einseitig eingespannten runden Stabes \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Daraus lässt sich mithilfe von \autoref{eq:1Konstante} das Elastizitätsmodul des runden Stabes bestimmen.
+Die aus der Ausgleichsgeraden bestimmte Steigung beträgt
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times 4.91 \times 10^{-10} \times 5.735 \times 10^{2}} \unit{\newton\per\meter\squared} = (1.313 \pm 0.008) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation}
+\noindent und ist somit mit einer Abweichung von -8.6\% relative nahe am Literaturwert.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/quadeinseitg.pdf}
+  \caption{Durchbiegung eines einseitig eingespannten quadratischen Stabes \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Für des quadratischen Stab ist das Vorgehen analog
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times 8.33 \times 10^{-10} \times 3.76 \times 10^{2}} \unit{\newton\per\meter\squared} = (1.178 \pm 0.007) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation}
+\noindent und mit einer Abweichung von 1.9\% deutlich näher am Literaturwert.
 \subsection{Beidseitig eingespannter Stab}
 Beim beidseitig eingespannten Stab ist die Masse $m=\qty{1051.7(0.1)}{\gram}$ in einer Entfernung von $l=\qty{55.9(0.01)}{\centi\meter}$
-eingespannt worden. In Tabelle \ref{tab:Beidseitig} ist die Durchbiegung beider Stäbe bei verschiedenen Entfernungen zur
+eingespannt worden. In Tabelle \autoref{tab:Einseitig} ist die Durchbiegung beider Stäbe bei verschiedenen Entfernungen zur
 aufliegenden Masse gemessen worden.
 \subsubsection{Messwerte der Auslenkung}
 \begin{table}[h!]
@@ -60,24 +107,68 @@ aufliegenden Masse gemessen worden.
   \label{tab:Beidseitig}
   \sisetup{table-format=3.0}
   \begin{tabular}{S S S S S }
-  \toprule
-  &\multicolumn{2}{c}{Quader} &\multicolumn{2}{c}{Zylinder}\\
-  \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-  {$\Delta x\mathbin{/}\unit{\centi\meter}$}&{$\Delta D_{\text{Links}} \mathbin{/}\unit{\micro\meter}$}&{$\Delta D_{\text{Rechts}} \mathbin{/}\unit{\micro\meter}$}&{$\Delta D_{\text{Links}} \mathbin{/}\unit{\micro\meter}$}&{$\Delta D_{\text{Rechts}} \mathbin{/}\unit{\micro\meter}$}\\
-  \midrule
-        3 & 260 & 240 & 180 & 160 \\
-        5 & 240 & 210 & 190 & 160 \\
-        7 & 210 & 200 & 180 & 140 \\
-        9 & 200 & 190 & 165 & 110 \\
-        11 & 200 & 170 & 140 & 65 \\
-        13 & 150 & 120 & 140 & 50 \\
-        15 & 160 & 90 & 110 & 70 \\
-        17 & 130 & 80 & 100 & 50 \\
-        19 & 120 & 70 & 90 & 35 \\
-        21 & 60 & 50 & 60 & 20 \\
-        23 & 60 & 30 & 60 & 15 \\
-        25 & 40 & 20 & 30 & 10 \\  
-  \bottomrule
+    \toprule
+                                               & \multicolumn{2}{c}{Quader}                                 & \multicolumn{2}{c}{Zylinder}                                                                                                                                                           \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    {$\Delta x\mathbin{/}\unit{\centi\meter}$} & {$\Delta D_{\text{Links}} \mathbin{/}\unit{\micro\meter}$} & {$\Delta D_{\text{Rechts}} \mathbin{/}\unit{\micro\meter}$} & {$\Delta D_{\text{Links}} \mathbin{/}\unit{\micro\meter}$} & {$\Delta D_{\text{Rechts}} \mathbin{/}\unit{\micro\meter}$} \\
+    \midrule
+    3                                          & 260                                                        & 240                                                         & 180                                                        & 160                                                         \\
+    5                                          & 240                                                        & 210                                                         & 190                                                        & 160                                                         \\
+    7                                          & 210                                                        & 200                                                         & 180                                                        & 140                                                         \\
+    9                                          & 200                                                        & 190                                                         & 165                                                        & 110                                                         \\
+    11                                         & 200                                                        & 170                                                         & 140                                                        & 65                                                          \\
+    13                                         & 150                                                        & 120                                                         & 140                                                        & 50                                                          \\
+    15                                         & 160                                                        & 90                                                          & 110                                                        & 70                                                          \\
+    17                                         & 130                                                        & 80                                                          & 100                                                        & 50                                                          \\
+    19                                         & 120                                                        & 70                                                          & 90                                                         & 35                                                          \\
+    21                                         & 60                                                         & 50                                                          & 60                                                         & 20                                                          \\
+    23                                         & 60                                                         & 30                                                          & 60                                                         & 15                                                          \\
+    25                                         & 40                                                         & 20                                                          & 30                                                         & 10                                                          \\
+    \bottomrule
   \end{tabular}
 \end{table}
-
+Nun wird analog zum einseitig befestigten Stab die Zweiseitigen geplottet und ausgewerted.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/quadzweiseitg_links.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes links von Mittelpunkt \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Die gefittete Funktion ergibt analog zur einseitigen einspannung ein Elastizitätsmodul von
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times -2.62 \times 10^{-2} \times 1.0517 \times} \unit{\newton\per\meter\squared} = (-1.79 \pm 0.16) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation}
+\noindent welches extrem weit vom Literaturwert entfernt ist.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/quadzweiseitg_rechts.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes rechts von Mittelpunkt \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Auch für die rechte Seite lässt sich das Elastizitätsmodul analog berechnen
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times 3.74 \times 10^{-2} \times 5.735 \times 10^{2}} \unit{\newton\per\meter\squared} = (-6.88 \pm 0.08) \times 10^{9} \unit{\newton\per\meter\squared}\text{.}
+\end{equation}
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rundzweiseitg_links.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten runden Stabes links von Mittelpunkt \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Sowie
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times 1.05 \times 10^{-3} \times 5.735 \times 10^{2}} \unit{\newton\per\meter\squared} = (-1 \pm 0.09) \times 10^{13} \unit{\newton\per\meter\squared}
+\end{equation}
+\noindent für die linken Messwerte des auf beiden Seiten eingespannten runden Stabes was einer Abweichung von -101.20\% entspricht.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rundzweiseitg_rechts.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten runden Stabes rechts von Mittelpunkt \cite{V103}.}
+  % \label{fig:Stab_run}
+\end{figure}
+\noindent Und
+\begin{equation}
+  E=\frac{m \times g}{2kI} = \frac{0.7523 \times 9.81}{2 \times 2.62 \times 10^{-2} \times 5.735 \times 10^{2}} \unit{\newton\per\meter\squared} = (-4 \pm 0.4) \times 10^{13} \unit{\newton\per\meter\squared}
+\end{equation}
+\noindent für die rechten Messwerte des auf beiden Seiten eingespannten runden Stabes was einer Abweichung von -130\% entspricht.
+\noindent 
