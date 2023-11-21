@@ -1,0 +1,57 @@
+\section{Theorie}
+\label{sec:Theorie}
+\subsection{Fourier-Theorie}
+Das Fouriersche Theorem besagt, dass sich jedes periodische Signal $f(t)$ als
+eine Reihe von Sin- und Cos-Funktionen der Form
+\begin{equation}
+  \label{eqn:Fourier-Reihe}
+  f(t)=\frac{1}{2}a_0+\sum_{n=1}^{\infty}\left(a_n \cos(n\frac{2\symup{\pi}}{T}t)+b_n \sin(n\frac{2\symup{\pi}}{T}t)\right)
+\end{equation}
+beschreiben lässt. Wobei T die Periodendauer des Signals ist.
+Mit der Periodendauer T lässt sich zur Grundfrequenz $\frac{1}{\symup{T}}$ eine Kreisfrequenz $\omega=\frac{2\symup{\pi}}{T}$
+definieren. Die Koeffizienten $a_n$ und $b_n$ beschreiben die Anteile aller
+Oberwellen, Schwingungen mit einem ganzzahligen Vielfachen der Grundfrequenz,
+die im Signal enthalten sind. Analytisch lassen Sie sich mit den Formeln
+\begin{align}
+  a_n & =\frac{2}{T}\int_0^Tf(t)\cos{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t
+  \label{eqn:an}
+\end{align}
+\begin{align}
+  b_n & =\frac{2}{T}\int_0^{T}f(t)\sin{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t
+  \label{eqn:bn}
+\end{align}
+berechnen. Ein Anteil für n=0 entspricht dabei einem sogenannten Offset.
+Das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0
+versetzten Wert.\\
+
+\noindent Diese Reihendarstellung des Signals konvergiert gleichmäßig
+gegen das zu beschreibende Signal $f(t)$, wenn $f(t)$ stetig ist. An Stellen der Unstetigkeit
+tritt das Gibbsche Phänomen auf. Demnach kommt es im Bereich der Unstetigkeit zu einer
+Überschwingung, die keinem experimentellen Fehlern zugrunde liegt.
+\cite{V351}
+\subsection{Fourier-Synthese}
+In der Fouriersynthese werden periodische Signale aus bereits bestehenden
+Oberwellen zusammengesetzt. Das heißt die Amplituden, also die
+Fourier-Koeffizienten, lassen sich so einstellen, dass ein gewünschtes
+Ausgangssignal entsteht (z.B. Rechtecksignal). \cite{V351}
+\subsection{Fourier-Analyse}
+Bei der Fourier-Analyse wird ein zeitlich periodisches Signal auf seine
+Frequenzanteile geprüft. Dazu werden analoge und digitale Verfahren entworfen.
+Ein analoges Verfahren basiert auf den Eigenschaften eines elektrischen
+Schwingkreises. Bei einer speziellen Frequenz, der Resonanzfrequenz, besitzt
+dieser einen merklichen Überschwinger. Wird ein Signal an den Eingang einer
+solchen Schaltung gelegt und die Grundfrequenz auf Resonanzfrequenz gestellt,
+können die Amplitudenverhältnisse der einzelnen Oberwellen zur Grundfrequenz
+gemessen werden. Da bei neu eingestellter Frequenz $\nu/n$, die n-te Oberwelle
+Resonanz am Ausgang hervorruft.\\
+
+\noindent Bei digitalen Verfahren wird das Signal quantisiert. Mit der sogenannten
+Abtastfrequenz, die mindestens doppelt so groß wie die höchste zu messende Oberwellenfrequenz sein soll,
+werden Messwerte genommen und dann mit einer Fast-Fourier-Transformation (FFT) in den
+Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden können.\\
+
+\noindent Die Amplitudenverhältnisse werden teilweise in Dezibel angegeben. Um diese Werte in Volt umzurechnen lässt sich die im Praktikum genannte Formel
+\begin{equation}
+  V=10^{\frac{dB}{20}}
+\end{equation}
+nutzen.
