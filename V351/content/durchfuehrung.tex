@@ -1,2 +1,39 @@
 \section{Durchführung}
 \label{sec:Durchführung}
+\subsection{Versuchsaufgabe}
+Das Ziel des ersten Teils der Versuchsaufgabe ist das Zusammensetzen einer
+periodischen Schwingung aus ihren Fourier-Komponenten sodas die gewünschte
+Schwingung(Rechteck, Sägezahn, Dreieck) entsteht. Im zweiten Teil des Versuches
+soll dies dann umgekehrt werden und mittels einer Fourier-Analyse eine gegebene
+periodische Funktion in ihre Fourier-Koeffizienten zerlegt werden.
+\subsection{Aufbau und Durchführung der Fourier-Synthese}
+Für die Fourier-Synthese wurde ein Oberwellengenerator verwendet, der bis zu 10
+Oberwellen erzeugen kann. Diese können alle bezüglich ihrer Amplitude und Phase
+separat eingestellt werden. Als erstes muss nun die Phasengleichheit der
+Oberschwingung mit den einzelnen Oberwellen eingestellt werden. Dazu werden
+jeweils die Oberschwingung sowie eine der Oberwellen an zwei Eingänge des
+Oszilloskops angeschlossen und im XY-Modus dargestellt. Im XY-Modus führ das
+Signal an Eingang 1 zu einer Auslenkung in X-Richtung und das Signal an Eingang
+2 zu einer Auslenkung in Y-Richtung. in dieser Darstellung bilden sich bei
+Periodischen Funktionen sogenannte Lissajous-Figuren\cite{V351}.
+Lissajous-Figuren sind bei geraden Oberwellen bei Phasengleichheit Linien und
+bei einer Verschiebung um 90° symmetrische "Schleifen". Bei ungeraden
+Oberwellen sind bei Phasengleichheit symmetrisch und bei einer Verschiebung um
+90° Linien. Wenn die Phasen richtig eingestellt sind müssen die Spannungen der
+Oberwellen mittels des Multimeters entsprechend der Fourier-Koeffizienten der
+gewünschten Funktion im Verhältnis zur Oberschwingung eingestellt werden.\\ Nun
+muss der Summen-Ausgang des Oberwellengenerator an das Oszilloskop
+angeschlossen werden und die Oberwellen nacheinander an geschaltet werden.
+Falls es beim Anschalten der Oberwelle zu einer Verschlechterung des Signals
+kommt muss die Oberwelle noch um 180° verschoben werden.
+\subsection{Aufbau und Durchführung der Fourier-Analyse}
+Der Aufbau der Fourier-Analyse setzt sich aus einem Funktionsgenerator und
+einem damit verbundenen digitalem Oszilloskop zusammen. MIttels des
+Funktionsgenerator lassen sich viele Grundsignale, wie Rechteck, Dreieck oder
+Sägezahn, mit einstellbarer Frequenz und Amplitude ausgeben. Der
+Funktionsgenerator ist mit einem BNC-Kabel am Oszilloskop angeschlossen, sodass
+das Signal am Oszilloskop analysiert werden kann. Das digitale Oszilloskop ist
+in der Lage den Frequenzbereich über eine FFT darzustellen.\\ \noindent Wenn
+alles verbunden und eingeschaltet ist lassen sich im FFT-Menü des Oszilloskops
+mittels des Cursors die Amplituden der einzelnen berechneten
+Fourier-Koeffizienten in dB ablesen.
