@@ -1,6 +1,5 @@
 \section{Theorie}
 \label{sec:Theorie}
-
 \subsection{Fourier-Theorie}
 Das Fouriersche Theorem besagt, dass sich jedes periodische Signal $f(t)$ als
 eine Reihe von Sinus- und Cosinusfunktionen der Form
@@ -14,9 +13,12 @@ definieren. Die Koeffizienten $a_n$ und $b_n$ beschreiben die Anteile aller
 Oberwellen, Schwingungen mit einem ganzzahligen Vielfachen der Grundfrequenz,
 die im Signal enthalten sind. Analytisch lassen Sie sich mit den Formeln
 \begin{align}
-  a_n & =\frac{2}{T}\int_0^Tf(t)\cos{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t   &
+  a_n & =\frac{2}{T}\int_0^Tf(t)\cos{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t
+  \label{eqn:an}
+\end{align}
+\begin{align}
   b_n & =\frac{2}{T}\int_0^{T}f(t)\sin{(n\frac{2\symup{\pi}}{T}t)}\symup{d}t
-  \label{eqn:Koeffizienten}
+  \label{eqn:bn}
 \end{align}
 berechnen. Ein Anteil für n=0 entspricht dabei einem sogenannten Offset.
 Das Signal ist im Mittel nicht 0, sondern schwingt um einen von 0
@@ -27,6 +29,11 @@ gegen das zu beschreibende Signal $f(t)$, wenn $f(t)$ stetig ist. An Stellen der
 tritt das Gibbsche Phänomen auf. Demnach kommt es im Bereich der Unsteigkeit zu einer
 Überschwingung, die keinem experimentellen Fehlern zugrunde liegt.
 \cite{V351}
+\subsection{Fourier-Synthese}
+In der Fouriersynthese werden periodische Signale aus bereits bestehenden
+Oberwellen zusammengesetzt. Das heißt die Amplituden, also die
+Fourier-Koeffizienten, lassen sich so einstellen, dass ein gewünschtes
+Ausgangssignal entsteht (z.B. Rechtecksignal). \cite{V351}
 \subsection{Fourier-Analyse}
 Bei der Fourier-Analyse wird ein zeitlich periodisches Signal auf seine
 Frequenzanteile geprüft. Dazu werden analoge und digitale Verfahren entworfen.
@@ -48,8 +55,3 @@ Frequenzbereich übertragen, wo die Frequenzanteile dann abgelesen werden könne
   V=10^{\frac{dB}{20}}
 \end{equation}
 nutzen.
-\subsection{Fourier-Synthese}
-In der Fouriersynthese werden periodische Signale aus bereits bestehenden
-Oberwellen zusammengesetzt. Das heißt die Amplituden, also die
-Fourierkoeffizienten, lassen sich so einstellen, dass ein gewünschtes
-Ausgangssignal entsteht (z.B. Rechtecksignal). \cite{V351}
