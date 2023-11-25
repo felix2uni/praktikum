@@ -15,7 +15,4 @@ ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
 ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
 ax2.legend(loc="best")
 
-
-
-
 fig.savefig("build/plot.pdf")
