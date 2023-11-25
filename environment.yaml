@@ -1,0 +1,8 @@
+name: praktikum
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
