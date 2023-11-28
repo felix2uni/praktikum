@@ -1,0 +1,167 @@
+\section{Auswertung}\label{sec:Auswertung}
+\subsection{Eigenschaften der zu vermessenden Körper}
+\subsubsection{Messwerte der Stabeigenschaften}
+Der rechteckige Stab hat eine Länge von $L=\qty{600(1)}{\milli\meter}$, eine Masse von $M=\qty{536.0(0.1)}{\gram}$
+und einen Durchmesser von $d=\qty{10(0.05)}{\milli\meter}$.
+Der runde Stab hat eine Länge von $L=\qty{590(1)}{\milli\meter}$, eine Masse von $M=\qty{412.2(0.1)}{\gram}$
+und einen Durchmesser von $d=\qty{10(0.05)}{\milli\meter}$.
+
+
+\subsubsection{Flächenträgheitsmoment und Materialabgleich}
+
+Das Flächenträgheitsmoment des Stabes mit der runden Grundfläche lässt sich mithilfe von Gleichung \eqref{eq:traegheitsmoment_rund} und dem Radius $a=\frac{1}{2}=\frac{0.01}{2}m=0.005m$ berechnen.
+
+\noindent Somit ist
+\begin{equation*}
+  I_{Kreis}=\frac{\pi a^4}{4}=\frac{\pi\times 0.005^4}{4}m^4=4.909\times 10^{-10}m^4\text{.}
+\end{equation*}
+
+\noindent Das Flächenträgheitsmoment des Stabes mit der quadratischen Grundfläche lässt sich nach Gleichung \eqref{eq:traegheitsmoment_quadratisch} berechnen und ergibt
+\begin{equation*}
+  I_{Quadrat}=\frac{a^4}{12}=\frac{0.01^4}{12}m^4=8.\overline{3}\times 10^{-10}m^4
+\end{equation*}
+
+\noindent Die Dichte eines Körpers lässt sich mithilfe
+\begin{equation*}
+  \rho=\frac{m}{V}
+\end{equation*}
+berechnen. Somit ist die Dichte des runden Stabes
+\begin{equation*}
+  % TODO: values
+  \rho_{Rund}=\frac{m}{\pi \times a^2 \times L}=\frac{0.4122}{\pi \times 0.005^2 \times 0.590}\frac{kg}{m^3} \approx 8895.41\frac{kg}{m^3}\approx 8.89\frac{g}{cm^3}
+\end{equation*}
+und die Dichte des Stabes mit quadratischer Grundfläche
+\begin{equation*}
+  \rho_{Quadrat}=\frac{m}{a^2 \times L}=\frac{0.5360}{0.01^2 \times 0.600}\frac{kg}{m^3} \approx 8933.33\frac{kg}{m^3} \approx 8.93\frac{g}{cm^3}\text{.}
+\end{equation*}.
+
+
+\subsection{Einseitig eingespannter Stab}
+
+\subsubsection{Messwerte der Auslenkung}
+
+An den eingespannten Stab ist in einem Abstand von $l=\qty{510}{\milli\meter}$ eine Masse von $m=\qty{0.5(0.001)}{\kilo\gram}$
+angehängt worden. In den Tabellen \ref{tab:rund_einseitig} und \ref{tab:eckig_einseitig} sind die Werte für die Durchbiegung $\Delta D$ eines
+Quaderförmigen Stabes und eines zylinderförmigen Stabes in Abhängigkeit von der Entfernung zum Einspannpunkt
+gemessen worden.
+\begin{table}[H]
+  \centering
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \input{build/rund_einseitig_table.tex}
+    \caption{Durchbiegung des runden Stabes in Abhängigkeit der Entfernung zum Einspannpunkt}
+    \label{tab:rund_einseitig}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \input{build/eckig_einseitig_table.tex}
+    \caption{Durchbiegung des quaderförmigen Stabes in Abhängigkeit der Entfernung zum Einspannpunkt}
+    \label{tab:eckig_einseitig}
+  \end{minipage}
+\end{table}
+
+\noindent Für die Bestimmung des Elastizitätsmoduls wird nun $\Delta x$ gegen $Lx^2 -\frac{x^3}{3}$ aufgetragen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rund_einseitig_plot.pdf}
+  \caption{Durchbiegung eines einseitig eingespannten runden Stabes \cite{V103}.}
+  \label{fig:Stab_rund}
+\end{figure}
+
+\noindent In \autoref{fig:Stab_rund} sind die mit der Funktion $Lx^2-\frac{x^3}{3}$ transformierten Messwerte für den einseitig eingespannten Stab zusammen mit einer Ausgleichsgeraden der form $f(x)=ax+b$ mit $a=3.968\times 10^{-2}$ und $b=4.908\times 10^{-5}$ aufgetragen. Daraus lässt sich mithilfe von \autoref{eq:einsietige_Biegung} das Elastizitätsmodul des runden Stabes aus der Steigung a der Ausgleichsgeraden bestimmen.
+
+\begin{equation*}
+  E=\frac{m \times g}{2kI} = \frac{0.5 \times 9.81}{2 \times 3.968 \times 10^{2} \times 4.909 \times 10^{-10}} \unit{\newton\per\meter\squared} = (1.259 \pm 0.009) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation*}.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/eckig_einseitig_plot.pdf}
+  \caption{Durchbiegung eines einseitig eingespannten quadratischen Stabes \cite{V103}.}
+  \label{fig:Stab_eckig}
+\end{figure}
+
+\noindent Für den quadratischen Stab ist das Vorgehen analog. Mit \autoref{eq:einsietige_Biegung}, den Parametern $a=2.638 \times 10^{-2}$ und $b=4.014 \times 10^{-5}$ der Ausgleichsgeraden ergibt sich ein Elastizitätsmodul von
+\begin{equation*}
+  E=\frac{m \times g}{2kI} = \frac{0.5 \times 9.81}{2 \times 2.638 \times 10^{2} \times 8.33 \times 10^{-10}} \unit{\newton\per\meter\squared} = (1.116 \pm 0.012) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation*}.
+
+\subsection{Beidseitig eingespannter Stab}
+
+Beim beidseitig eingespannten Stab ist die Masse $m=\qty{1(0.001)}{\kilo\gram}$ in einer Entfernung von $l=\qty{27.5(0.01)}{\centi\meter}$
+eingespannt worden. In \autoref{tab:rund_einseitig} und \autoref{tab:eckig_einseitig} ist die Durchbiegung beider Stäbe bei verschiedenen Entfernungen zur
+aufliegenden Masse gemessen worden.
+
+\begin{table}[H]
+  \centering
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \input{build/rund_zweiseitig_table.tex}
+    \caption{Durchbiegung des runden zweiseitig eingespannten Stabes in Abhängigkeit der Entfernung zum Einspannpunkt}
+    \label{tab:rund_einseitig}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \centering
+    \input{build/eckig_zweiseitig_table.tex}
+    \caption{Durchbiegung des quaderförmigen zweiseitig eingespannten Stabes in Abhängigkeit der Entfernung zum Einspannpunkt}
+    \label{tab:eckig_einseitig}
+  \end{minipage}
+\end{table}
+
+\noindent Nun wird analog zu den einseitig befestigten Stäben die zweiseitig eingespannten Stäbe geplottet und ausgewertet.
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/eckig_zweiseitig_links_plot.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes links von Mittelpunkt \cite{V103}.}
+  \label{fig:eckig_zweiseitig_links}
+\end{figure}
+\noindent In \autoref{fig:eckig_zweiseitig_links} sind die mit $3L^2x-4x^3$ transformierten Messwerte für die linke Seite des quadratischen beidseitig eingespannten Stabes sowie eine Ausgleichsgeraden der Form $f(x)=ax+b$ mit den Parametern $a=8.927\times 10^{-4}$ und $b=4.030\times 10^{-6}$ zu sehen. Daraus lässt sich erneut das Elastizitätsmodul mithilfe von \autoref{eq:beidseitige_biegung} berechnen. Es ergibt sich
+\begin{equation*}
+  E=\frac{m \times g}{48kI} = \frac{1 \times 9.81}{48 \times 8.333 \times 10^{-10} \times 8.927 \times 10^{-4} \times} \unit{\newton\per\meter\squared} = (2.57 \pm 0.12) \times 10^{11} \unit{\newton\per\meter\squared}.
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/eckig_zweiseitig_rechts_plot.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes rechts von Mittelpunkt \cite{V103}.}
+  \label{fig:eckig_zweiseitig_rechts}
+\end{figure}
+
+\noindent Auch für die rechte Seite werden die mit $4x^3-12Lx^2+9L^2x-L^4$ transformierten Messwerte in \autoref{fig:eckig_zweiseitig_rechts} geplottet und eine Ausgleichsgerade gefittet. Daraus lässt sich das Elastizitätsmodul mit \autoref{eq:beidseitige_biegung} und der Steigung der Ausgleichsgeraden von $a=6.180 \times 10^{-4}$ berechnen und ergibt
+\begin{equation*}
+  E=\frac{m \times g}{48kI} = \frac{1 \times 9.81}{48 \times 8.333 \times 10^{-10} \times 6.180 \times 10^{-4}} \unit{\newton\per\meter\squared} = (4.00 \pm 0.40) \times 10^{11} \unit{\newton\per\meter\squared}\text{.}
+\end{equation*}
+
+\noindent Die gleichen Auswertungsschritte werden auch für den beidseitig eingespannten runden Stab gemacht.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rund_zweiseitig_links_plot.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes rechts von Mittelpunkt \cite{V103}.}
+  \label{fig:rund_zweiseitig_links}
+\end{figure}
+
+\noindent In \autoref{fig:rund_zweiseitig_links} sind die um $3L^2x-4x^3$ transformierten Messwerte für die linke Seite eines beidseitig eingespannten runden Stabes und eine dazugehörige Ausgleichsgerade mit $a=-1053\times 10^{-3}$ und $b=-4$ aufgetragen.  Daraus lässt sich erneut mit \autoref{eq:beidseitige_biegung} das Elastizitätsmodul
+\begin{equation*}
+  E=\frac{m \times g}{48kI} = \frac{1 \times 9.81}{48 \times 4.909 \times 10^{-10} \times 1.290 \times 10^{-3}} \unit{\newton\per\meter\squared} = (3.23 \pm 0.10) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation*}
+\noindent berechnen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[]{build/rund_zweiseitig_rechts_plot.pdf}
+  \caption{Durchbiegung eines zweiseitig eingespannten quadratischen Stabes rechts von Mittelpunkt \cite{V103}.}
+  \label{fig:rund_zweiseitig_rechts}
+\end{figure}
+
+\noindent Die mit $4x^3-12Lx^2+9L^2x-L^3$ transformierten Messwerte auf der rechten Seite des zweiseitig eingespannten runden Stabes sind in \autoref{fig:rundzweiseitg_rechts} aufgetragen und mit einer Ausgleichsgeraden mit $a=-2.626\times 10^{-2}$ und $b=-3$ versehen.
+\noindent Aus der Steigung der Ausgleichsgerade lässt sich erneut mit \autoref{eq:beidseitige_biegung} das Elastizitätsmodul
+\begin{equation*}
+  E=\frac{m \times g}{48kI} = \frac{1 \times 9.81}{48 \times 4.909 \times 10^{-10} \times 7.446 \times 10^{-4}} \unit{\newton\per\meter\squared} = (5.6 \pm 0.6) \times 10^{11} \unit{\newton\per\meter\squared}
+\end{equation*}
+\noindent brechen.

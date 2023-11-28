@@ -5,7 +5,7 @@ build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python plot.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
 build/vXXX.pdf: build/plot.pdf

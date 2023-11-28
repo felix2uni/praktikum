@@ -1,0 +1,12 @@
+name: praktikum
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
+  - jinja2
+  - pip
+  - pip: 
+    - uncertainties
