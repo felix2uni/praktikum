@@ -1,14 +1,23 @@
 all: build/V103.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
-	# so that matplotlib can find the tex header when running
-	# LaTeX in the tmp directory
-	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+build/eckig_einseitig_plot.pdf: data/eckig_einseitig.csv eckig_einseitig_plot.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python eckig_einseitig_plot.py
+
+build/rund_einseitig_plot.pdf: data/rund_einseitig.csv rund_einseitig_plot.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python rund_einseitig_plot.py
+
+build/eckig_zweiseitig_links_plot.pdf build/eckig_zweiseitig_rechts_plot.pdf: data/eckig_zweiseitig.csv eckig_zweiseitig_plot.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python eckig_zweiseitig_plot.py
+
+build/rund_zweiseitig_links_plot.pdf build/rund_zweiseitig_rechts_plot.pdf: data/rund_zweiseitig.csv rund_zweiseitig_plot.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python rund_zweiseitig_plot.py
+
+build/eckig_einseitig_table.tex build/rund_einseitig_table.tex build/eckig_zweiseitig_table.tex build/rund_zweiseitig_table.tex: tables.py | build
+	TEXINPUTS=$$(pwd)/..: conda run -n praktikum python tables.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/V103.pdf: build/plot.pdf
+build/V103.pdf: build/rund_zweiseitig_links_plot.pdf build/rund_zweiseitig_rechts_plot.pdf build/eckig_zweiseitig_links_plot.pdf build/eckig_zweiseitig_rechts_plot.pdf build/eckig_einseitig_plot.pdf build/rund_einseitig_plot.pdf build/eckig_einseitig_table.tex build/rund_einseitig_table.tex build/eckig_zweiseitig_table.tex build/rund_zweiseitig_table.tex
 
 build/V103.pdf: FORCE | build
 	# to find header and bib files in the main directory

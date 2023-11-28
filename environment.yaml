@@ -6,3 +6,7 @@ dependencies:
   - matplotlib
   - pandas
   - scipy
+  - jinja2
+  - pip
+  - pip: 
+    - uncertainties
