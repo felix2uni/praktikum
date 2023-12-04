@@ -1,2 +1,14 @@
 \section{Diskussion}
-\label{sec:Diskussion}
+Es ist zu sehen, dass bei der Bestimmung der Ausgangsspannung in Abhängigkeit von der Phasenverschiebung im Experiment eine zusätzliche Phasenverschiebung auftritt, welche nicht mit der theoretischen Vorhersage (Gl. \eqref{eq:Uout}) übereinstimmt. Da diese Verschiebung sowohl beim verrauschten als auch beim unverrauschten Signal auftrat und in beiden Fällen etwa gleich groß war, liegt die Vermutung nahe, dass diese Phase im Aufbau zwischen der Signalspannung und der Referenzspannung lag. Unabhängig davon lies sich allerdings die grundlegende Funktionsweise des Lock-In-Verstärkers nachweisen. Trotz des zugeschalteten Rauschens lies sich das Ursprungssignal klar herauslesen. Dies gilt auch für die Messung der Abhägigkeit der Intensität der LED vom Abstand zur Photodiode. Theoretisch ist zu erwarten, dass die Lichtintensität $I$, und damit auch die gemessene Spannung vom Abstand $r$ abhängen nach
+\begin{equation*}
+    I \propto U \propto \frac{1}{r^2} = r^{-2}
+\end{equation*}
+Im Experiment wurde der Exponent bestimmt zu
+\begin{equation*}
+    k = \num{-1.862 +- 0.086},
+\end{equation*}
+die relative Abweichung zum Theoriewert beträgt
+\begin{equation*}
+    \Delta k_\text{rel} = \frac{-2 - k}{-2} = 6.9 \% .
+\end{equation*}
+Trotz eingeschalteter Raumbeleuchtung lies sich also das Signal der LED und die Abhängigkeit der Intensität zum Abstand in guter Näherung nachweisen.
