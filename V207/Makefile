@@ -1,4 +1,4 @@
-all: build/vXXX.pdf
+all: build/V207.pdf
 
 # hier Python-Skripte:
 build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
@@ -8,9 +8,9 @@ build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python plot.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/vXXX.pdf: build/plot.pdf
+build/V207.pdf: build/plot.pdf
 
-build/vXXX.pdf: FORCE | build
+build/V207.pdf: FORCE | build
 	# to find header and bib files in the main directory
 	TEXINPUTS=..: \
 	BIBINPUTS=..: \
@@ -20,7 +20,7 @@ build/vXXX.pdf: FORCE | build
 	  --output-directory=build \
 	  --interaction=nonstopmode \
 	  --halt-on-error \
-	vXXX.tex
+	V207.tex
 
 build:
 	mkdir -p build
