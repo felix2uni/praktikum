@@ -85,7 +85,7 @@ a = ufloat(params[0], errors[0])
 I = (np.pi * B**4) / 4   # Trägheitsmoment
 E = (M*9.81)/(48*I*a)  # Elastizitaetsmodul
 
-print('Parameter fuer quadratischen Stab bei zweiseitiger Einspannung rechts:')
+print('Parameter fuer runden Stab bei zweiseitiger Einspannung rechts:')
 print('a =', params[0], '±', errors[0])
 print('b =', params[1], '±', errors[1])
 print('Elastizitaetsmodul:')
