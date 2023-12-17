@@ -1,0 +1,37 @@
+\section{Diskussion}
+\label{sec:Diskussion}
+
+\subsection{Temperaturabhängigkeit der Viskosität}
+
+Trotz der vielen Messungenauigkeiten, vor allem bei der Fallzeit $t$, aber
+beim Gewicht $m$ und dem Radius $r$ der Kugeln, sind die Messfehler der
+Koeffizienten in der Andraedschen Gleichung relativ klein.
+Die prozentualen Abweichungen $\Delta x$ der Viskositäts-Werte
+$\eta_\text{mess}(T)$ von den
+Literaturwerten $\eta_\text{lit}(T)$ \cite{TfCuP}
+bleiben über das gesamte Temperaturspektrum relativ konstant bei um $\SI{24}{\percent}$,
+wie an Tabelle \ref{tab:compare} erkennbar ist.
+Der Fehler ist vor allem dadurch zu erklären, dass das manuelle Stoppen mit der Stoppuhr sehr ungenau ist.
+
+
+\begin{table}
+  \centering
+  \input{build/compare.tex}
+  \caption{Messwerte der Fallzeit der kleinen Kugel bei Raumtemperatur.}
+  \label{tab:compare}
+\end{table}
+
+
+\subsection{Reynolds-Zahl}
+
+Die berechnete Reynolds-Zahl liegt mit
+
+\begin{equation}
+  Re = \num{6.75e-6}
+\end{equation}
+eindeutig unter dem kritischen Wert
+
+\begin{equation}
+  Re_\text{krit} = 2300.
+\end{equation}
+Damit ist die Strömung laminar.
