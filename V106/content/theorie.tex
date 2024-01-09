@@ -2,9 +2,115 @@
 Im folgenden Versuch werden verschiedene Schwingungsarten von gekoppelten Pendeln betrachtet. Das Pendel soll in diesem Versuch als ein mathematisches Pendel der Länge $l$ und der Masse $m$ angenommen und betrachtet werden.
 Die Bewegungsgleichung eines mathematisches Pendel lässt sich aus dem zweiten Newtonschen Axiom herleiten,
 \begin{equation}
-  F=m\cdot\ddot{x} \label{eqn:newton2}
+  F=m\cdot\ddot{x} \label{eq:newton2}
 \end{equation}
-indem man die Gleichung \eqref{eqn:newton2} und die rücktreibende Kraft des Systems gleichsetzt.
+indem man die Gleichung \eqref{eq:newton2} und die rücktreibende Kraft des Systems gleichsetzt.
 \begin{equation}
-  F_\text{rück}=-m\cdot g\cdot sin(\phi(t)) \label{eqn:pendelkraft}
+  F_\text{rück}=-m\cdot g\cdot \sin(\phi(t)) \label{eq:pendelkraft}
 \end{equation}
+In \eqref{eq:newton2} muss jetzt noch die Beschleunigung $\ddot x$ an das Problem angepasst werden. Diese ist bei einem Pendel die tangentiale
+Beschleunigung. Es gilt:
+\begin{equation}
+  \ddot x(t)=l\cdot \ddot{\phi}(t)
+\end{equation}
+In \eqref{eq:newton2} muss jetzt noch die Beschleunigung $\ddot x$ an das Problem angepasst werden. Diese ist bei einem Pendel die tangentiale
+Beschleunigung. Es gilt:
+\begin{equation}
+  \ddot x(t)=l\cdot \ddot{\phi}(t)
+\end{equation}
+Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Gleichsetzen von \eqref{eq:newton2} und
+\eqref{eq:pendelkraft} ergibt nun die Differentialgleichung
+\begin{eqnarray}
+  \ddot{\phi}(t)+\frac{g}{l}\sin(\phi(t))=0.
+\end{eqnarray}
+Die Differentialgleichung ist auf Grund des Sinus jedoch nicht linear und deswegen weder analytisch lösbar, noch ein harmonischer Oszillator.
+Um die Differentialgleichung trotzdem lösen zu können, wird hier die Taylorfunktion des Sinus betrachtet
+\begin{equation}
+  \sin(x)=\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}.
+\end{equation}
+Für $n=0$ ergibt sich die sogenannte Kleinwinkelnäherung
+\begin{equation}
+  \sin(x)\approx x. \label{eq:kleinwinkel}
+\end{equation}
+Durch diese wird zumindest für kleine Winkel $\phi$ die lineare Differentialgleichung des harmonischen Oszillators
+\begin{equation}
+  \ddot{x}+\omega^2\cdot x=0 \label{eq:harmOsz}
+\end{equation}
+erlangt. Zwar entsteht bei der Kleinwinkelnäherung ein Fehler, dieser ist für kleine Winkel jedoch so gering, dass im Folgenden die Näherung für die weiteren Berechnungen verwendet wird.
+Die folgenden Rechnungen sind also nur unter der Annahme einer kleinen Auslenkung sinnvoll.
+Die Differentialgleichung lautet nun
+\begin{equation}
+  \ddot{\phi}(t)+\frac{g}{l}\phi(t)=0
+\end{equation}
+und wird durch den Ansatz
+\begin{align}
+  x(t)        & =A\cdot \cos(\omega\cdot t)+B\cdot \sin(\omega\cdot t) \\
+  \ddot{x}(t) & =-\omega^2\cdot x(t)
+  \label{eq:ansatz}
+\end{align}
+gelöst. Die Frequenz ergibt sich dabei zu
+\begin{equation}
+  \omega=\sqrt{\frac{g}{l}}
+\end{equation}
+und mittels
+\begin{equation}
+  T=\frac{2\times\pi}{\omega}
+\end{equation}
+ergibt sich die Periodendauer
+\begin{equation}
+  T=2 \times \pi \times \sqrt{\frac{l}{g}}.
+  \label{eq:Periodendauer}
+\end{equation}
+Die Frequenz des Pendels ist also sowohl unabhängig von der Masse $m$, als auch von der Auslenkung, solange diese hinreichend klein ist.
+
+\subsection{Gekoppelte Pendel}
+Werden zwei identische Pendel mit einer Feder gekoppelt, so schwingen diese nicht mehr unabhängig von einander, da die Pendel zusätzliche Kräfte auf
+einander auswirken. Als zusätzlichen Größe fließt die Federkonstante $k$ in die Gleichung ein. Zudem sind nun zwei Längen für das System relevant, nämlich die
+Länge der Pendel $L$ und der Abstand $l$, mit dem die Feder an den Pendeln befestigt ist.
+\\
+Es liegt nun ein System aus zwei Differentialgleichungen vor, die zudem miteinander gekoppelt sind:
+\begin{align}
+  J\ddot{\phi}_1 & =-mgL\phi_1+kl^2(\phi_2-\phi_1) \\
+  J\ddot{\phi}_2 & =-mgL\phi_2+kl^2(\phi_2-\phi_1)
+\end{align}
+Das Differentialgleichungs-System wird im Folgenden nur für drei verschiedene Anfangsbedingungen gelöst, da nur diese für den Versuch relevant sind.
+Die Anfangsbedingungen sind hierbei die Winkel $\alpha_1$ und $\alpha_2$, mit denen die Pendel zu Beginn ausgelenkt werden, und die Geschwindigkeiten
+$v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fälle gilt $v_1=v_2=0$.
+
+\begin{enumerate}
+  \item \textit{Gleichsinnige Schwingung: $\alpha_1=\alpha_2$} \\
+        Bei einer gleichsinnigen Schwingung werden beide Pendel um den gleichen Winkel ausgelenkt. Die Pendel schwingen nun unabhängig von einander,
+        so wie sie auch ohne eine Kopplung schwingen würden. Deswegen ist auch die Frequenz für mathematische Pendel analog zu jener, die wir für einzele
+        mathematische Pendel her geleitet haben
+        \begin{equation}
+          \omega_{+}=\sqrt{\frac{g}{l}}.
+        \end{equation}
+  \item \textit{Gegensinnige Schwingung: $\alpha_1=-\alpha_2$}\\
+        Bei einer gegensinnigen Schwingung werden beide Pendel genau entgegengesetzt ausgelenkt. Der Betrag des Winkels ist also exakt gleich groß, das Vorzeichen
+        ist jedoch genau entgegen gesetzt. Die Feder übt nun eine Kraft auf die Pendel aus, die abhängig von der Auslenkung der Pendel ist. Dadurch ergibt sich die
+        Frequenz für mathematische Pendel zu
+        \begin{equation}
+          \omega_{-}=\sqrt{\frac{g}{l}+2\frac{kl^2}{mL^2}}.
+        \end{equation}
+        Die Frequenz hängt nun also auch noch von der Federkonstante $k$ ab.
+  \item \textit{Gekoppelte Schwingung: $\alpha_1=0$, $\alpha_2\neq 0$}\\
+        Bei einer gekoppelten Schwingung wird nur eines der beiden Pendel ausgelenkt. Das andere Pendel bleibt in der Ruhelage. Nun kommt es zu dem Phänomen der
+        Schwebung. Das erste Pendel, welches ausgelenkt wird, überträgt bei seiner Schwingung seine Energie nach und nach an das zweite Pendel, welches sich
+        zu Beginn in der Ruhelage befand. Dadurch fängt nun das zweite Pendel an zu schwingen. Hat das erste Pendel seine gesamte Energie an das zweite Pendel
+        abgegeben, kommt es in der Ruhelage zum Stillstand. Das zweite Pendel, welches nun so schwingt wie das Erste zu Beginn, überträgt nun seine Energie wieder
+        an das erste Pendel, bis sich der Vorgang abermals wiederholt. Die sogenannte Schwebungsfrequnz beschreibt nun die Zeitspanne zwischen dem Stillstand eines
+        Pendels bis zum nächsten Stillstand des selben Pendels. Die Schwebungsfrequnz ist dabei gegeben durch
+        \begin{equation}
+          \omega_\text{S}=\omega_+ - \omega_-
+        \end{equation}
+        und die Schwebungsdauer ist gegeben durch
+        \begin{equation}
+          T_\text{S}=\frac{T_+\cdot T_-}{T_+-T_-}.
+        \end{equation}
+        \\
+        Um die Kopplung zwischen den beiden Pendeln zu beschreiben, wird die Kopplungskonstante $K$ definiert
+        \begin{equation}
+          \label{eq:kopplungskonstante}
+          K=\frac{\omega_-^2-\omega_+^2}{\omega_-^2+\omega_+^2}=\frac{T_-^2-T_+^2}{T_-^2+T_+^2}.
+        \end{equation}
+\end{enumerate}
