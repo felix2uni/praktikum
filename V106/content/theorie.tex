@@ -4,30 +4,25 @@ Die Bewegungsgleichung eines mathematisches Pendel lässt sich aus dem zweiten N
 \begin{equation}
   F=m\cdot\ddot{x} \label{eq:newton2}
 \end{equation}
-indem man die Gleichung \eqref{eq:newton2} und die rücktreibende Kraft des Systems gleichsetzt.
+indem die Gleichung \eqref{eq:newton2} und die rücktreibende Kraft des Systems gleichgesetzt werden.
 \begin{equation}
   F_\text{rück}=-m\cdot g\cdot \sin(\phi(t)) \label{eq:pendelkraft}
 \end{equation}
 In \eqref{eq:newton2} muss jetzt noch die Beschleunigung $\ddot x$ an das Problem angepasst werden. Diese ist bei einem Pendel die tangentiale
 Beschleunigung. Es gilt:
-\begin{equation}
+\begin{equation*}
   \ddot x(t)=l\cdot \ddot{\phi}(t)
-\end{equation}
-In \eqref{eq:newton2} muss jetzt noch die Beschleunigung $\ddot x$ an das Problem angepasst werden. Diese ist bei einem Pendel die tangentiale
-Beschleunigung. Es gilt:
-\begin{equation}
-  \ddot x(t)=l\cdot \ddot{\phi}(t)
-\end{equation}
+\end{equation*}
 Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Gleichsetzen von \eqref{eq:newton2} und
 \eqref{eq:pendelkraft} ergibt nun die Differentialgleichung
-\begin{eqnarray}
+\begin{eqnarray*}
   \ddot{\phi}(t)+\frac{g}{l}\sin(\phi(t))=0.
-\end{eqnarray}
+\end{eqnarray*}
 Die Differentialgleichung ist auf Grund des Sinus jedoch nicht linear und deswegen weder analytisch lösbar, noch ein harmonischer Oszillator.
 Um die Differentialgleichung trotzdem lösen zu können, wird hier die Taylorfunktion des Sinus betrachtet
-\begin{equation}
+\begin{equation*}
   \sin(x)=\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}.
-\end{equation}
+\end{equation*}
 Für $n=0$ ergibt sich die sogenannte Kleinwinkelnäherung
 \begin{equation}
   \sin(x)\approx x. \label{eq:kleinwinkel}
@@ -39,26 +34,27 @@ Durch diese wird zumindest für kleine Winkel $\phi$ die lineare Differentialgle
 erlangt. Zwar entsteht bei der Kleinwinkelnäherung ein Fehler, dieser ist für kleine Winkel jedoch so gering, dass im Folgenden die Näherung für die weiteren Berechnungen verwendet wird.
 Die folgenden Rechnungen sind also nur unter der Annahme einer kleinen Auslenkung sinnvoll.
 Die Differentialgleichung lautet nun
-\begin{equation}
+\begin{equation*}
   \ddot{\phi}(t)+\frac{g}{l}\phi(t)=0
-\end{equation}
+\end{equation*}
 und wird durch den Ansatz
-\begin{align}
+\begin{align*}
   x(t)        & =A\cdot \cos(\omega\cdot t)+B\cdot \sin(\omega\cdot t) \\
   \ddot{x}(t) & =-\omega^2\cdot x(t)
   \label{eq:ansatz}
-\end{align}
+\end{align*}
 gelöst. Die Frequenz ergibt sich dabei zu
-\begin{equation}
+\begin{equation*}
   \omega=\sqrt{\frac{g}{l}}
-\end{equation}
+\end{equation*}
 und mittels
 \begin{equation}
-  T=\frac{2\times\pi}{\omega}
+  \label{eq:schw}
+  T=\frac{2 \cdot \pi}{\omega}
 \end{equation}
 ergibt sich die Periodendauer
 \begin{equation}
-  T=2 \times \pi \times \sqrt{\frac{l}{g}}.
+  T=2 \cdot \pi \cdot \sqrt{\frac{l}{g}}.
   \label{eq:Periodendauer}
 \end{equation}
 Die Frequenz des Pendels ist also sowohl unabhängig von der Masse $m$, als auch von der Auslenkung, solange diese hinreichend klein ist.
@@ -69,10 +65,10 @@ einander auswirken. Als zusätzlichen Größe fließt die Federkonstante $k$ in 
 Länge der Pendel $L$ und der Abstand $l$, mit dem die Feder an den Pendeln befestigt ist.
 \\
 Es liegt nun ein System aus zwei Differentialgleichungen vor, die zudem miteinander gekoppelt sind:
-\begin{align}
+\begin{align*}
   J\ddot{\phi}_1 & =-mgL\phi_1+kl^2(\phi_2-\phi_1) \\
   J\ddot{\phi}_2 & =-mgL\phi_2+kl^2(\phi_2-\phi_1)
-\end{align}
+\end{align*}
 Das Differentialgleichungs-System wird im Folgenden nur für drei verschiedene Anfangsbedingungen gelöst, da nur diese für den Versuch relevant sind.
 Die Anfangsbedingungen sind hierbei die Winkel $\alpha_1$ und $\alpha_2$, mit denen die Pendel zu Beginn ausgelenkt werden, und die Geschwindigkeiten
 $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fälle gilt $v_1=v_2=0$.
@@ -83,6 +79,7 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         so wie sie auch ohne eine Kopplung schwingen würden. Deswegen ist auch die Frequenz für mathematische Pendel analog zu jener, die wir für einzele
         mathematische Pendel her geleitet haben
         \begin{equation}
+          \label{eq:omega_plus}
           \omega_{+}=\sqrt{\frac{g}{l}}.
         \end{equation}
   \item \textit{Gegensinnige Schwingung: $\alpha_1=-\alpha_2$}\\
@@ -90,9 +87,10 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         ist jedoch genau entgegen gesetzt. Die Feder übt nun eine Kraft auf die Pendel aus, die abhängig von der Auslenkung der Pendel ist. Dadurch ergibt sich die
         Frequenz für mathematische Pendel zu
         \begin{equation}
-          \omega_{-}=\sqrt{\frac{g}{l}+2\frac{kl^2}{mL^2}}.
+          \label{eq:omega_minus}
+          \omega_{-}=\sqrt{\frac{g}{l} \cdot \frac{1+ K}{1-K}}.
         \end{equation}
-        Die Frequenz hängt nun also auch noch von der Federkonstante $k$ ab.
+        Die Frequenz hängt nun also auch noch von der Federkonstante $K$ ab.
   \item \textit{Gekoppelte Schwingung: $\alpha_1=0$, $\alpha_2\neq 0$}\\
         Bei einer gekoppelten Schwingung wird nur eines der beiden Pendel ausgelenkt. Das andere Pendel bleibt in der Ruhelage. Nun kommt es zu dem Phänomen der
         Schwebung. Das erste Pendel, welches ausgelenkt wird, überträgt bei seiner Schwingung seine Energie nach und nach an das zweite Pendel, welches sich
@@ -105,6 +103,7 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         \end{equation}
         und die Schwebungsdauer ist gegeben durch
         \begin{equation}
+          \label{eq:schwebungsdauer}
           T_\text{S}=\frac{T_+\cdot T_-}{T_+-T_-}.
         \end{equation}
         \\
