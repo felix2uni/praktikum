@@ -33,6 +33,7 @@ kleine_kugel_up = kleine_kugel[kleine_kugel["d"] == "u"]["t"]
 kleine_kugel_down = kleine_kugel[kleine_kugel["d"] == "d"]["t"]
 
 kleine_kugel_mean = kleine_kugel["t"].mean()
+kleine_kugel_std = kleine_kugel["t"].std()
 kleine_kugel_up_mean = kleine_kugel_up.mean()
 kleine_kugel_down_mean = kleine_kugel_down.mean()
 kleine_kugel_viscosity = (
@@ -51,6 +52,7 @@ with open("build/kleine_kugel.tex", "w") as f:
     )
 
 print(f"Mean kleine Kugel: {kleine_kugel_mean}")
+print(f"Std kleine Kugel: {kleine_kugel_std}")
 print(f"Mean kleine Kugel up: {kleine_kugel_up_mean}")
 print(f"Mean kleine Kugel down: {kleine_kugel_down_mean}")
 
@@ -73,6 +75,7 @@ grosse_kugel_up = grosse_kugel[grosse_kugel["d"] == "u"]["t"]
 grosse_kugel_down = grosse_kugel[grosse_kugel["d"] == "d"]["t"]
 
 grosse_kugel_mean = grosse_kugel["t"].mean()
+grosse_kugel_std = grosse_kugel["t"].std()
 grosse_kugel_up_mean = grosse_kugel_up.mean()
 grosse_kugel_down_mean = grosse_kugel_down.mean()
 
@@ -88,17 +91,18 @@ with open("build/grosse_kugel.tex", "w") as f:
     )
 
 print(f"Mean grosse Kugel: {grosse_kugel_mean}")
+print(f"Std grosse Kugel: {grosse_kugel_std}")
 print(f"Mean grosse Kugel up: {grosse_kugel_up_mean}")
 print(f"Mean grosse Kugel up: {grosse_kugel_up_mean}")
 # print(f"Viskosität grosse Kugel: {grosse_kugel_viscosity}")
 
 grosse_kugel_velocity = grosse_kugel_way_length / grosse_kugel_mean
 
-grosse_kugel_reynold = (
-    grosse_kugel_velocity * grosse_kugel_diameter * density_water
-) / grosse_kugel_density
+# grosse_kugel_reynold = (
+#     grosse_kugel_velocity * grosse_kugel_diameter * density_water
+# ) / grosse_kugel_density
 
-print(f"grosse kugelreynold: {grosse_kugel_reynold}")
+# print(f"grosse kugel reynold: {grosse_kugel_reynold}")
 
 grosse_kugel_temperature = pd.read_csv("assets/grosse_kugel_temperatur.csv")
 
@@ -123,17 +127,19 @@ grosse_kugel_temperature["eta"] = (
     * grosse_kugel_temperature["mean"]
 )
 
+grosse_kugel_temperature["eta"] = grosse_kugel_temperature["eta"] * 10**3
+
 with open("build/grosse_kugel_temperatur.tex", "w") as f:
     f.write(
         grosse_kugel_temperature.to_latex(
             header=[
-                "$T/K$",
-                f"{up_char} $t_1/s$",
-                f"{down_char} $t_2/s$",
-                f"{up_char} $t_3/s$",
-                f"{down_char} $t_4/s$",
-                "$t_m/s$",
-                "$ \eta/\si{{\milli\pascal\second}} $",
+                "$T$ in $\\si{{\\kelvin}}$",
+                up_char + " $t_{{1}}$ in $\\si{{\\second}}$",
+                down_char + " $t_{{2}}$ in $\\si{{\\second}}$",
+                up_char + " $t_{{3}}$ in $\\si{{\\second}}$",
+                down_char + " $t_{{4}}$ in $\\si{{\\second}}$",
+                "$t_{{m}}$ in $\si{{\second}}$",
+                "$\eta$ in $\si{{\milli\pascal\second}}$",
             ],
             index=False,
             formatters=[
@@ -143,7 +149,7 @@ with open("build/grosse_kugel_temperatur.tex", "w") as f:
                 "{:.2f}".format,
                 "{:.2f}".format,
                 "{:.2f}".format,
-                "{:.2E}".format,
+                "{:.2f}".format,
             ],
         )
     )
@@ -158,7 +164,9 @@ params, cov = curve_fit(
 )
 
 
-print(params)
+print(f"Fit: A = {params[0]} = = {params[0] * 10**3}")
+print(f"Fit: a = ln(A) = {np.log(params[0])}")
+print(f"Fit: B = {params[1]}")
 
 plt.plot(
     1 / grosse_kugel_temperature["T"],
@@ -172,8 +180,8 @@ plt.plot(
     "x",
     label="Messwerte",
 )
-plt.xlabel(r"$(1/T)/\si{\kelvin}^{-1}$")
-plt.ylabel(r"$ln(\eta/o)$")
+plt.xlabel("$\\frac{{1}}{{T}}/\\si{{\\kelvin}}^{{-1}}$")
+plt.ylabel(r"$ln(\eta)ln(\si{\kilo\gram\per\meter\per\second})$")
 plt.legend(loc="best")
 plt.grid()
 plt.savefig("build/grosse_kugel_temperature.pdf")
@@ -192,25 +200,69 @@ def abweichung(approx, exact):
 
 compare["T"] = grosse_kugel_temperature["T"]
 compare["eta1"] = grosse_kugel_temperature["eta"]
-compare["eta2"] = wasser_lit(grosse_kugel_temperature["T"])
+compare["eta2"] = wasser_lit(grosse_kugel_temperature["T"]) * 10**3
 compare["difference"] = abweichung(compare["eta1"], compare["eta2"])
 
 with open("build/compare.tex", "w") as f:
     f.write(
         compare.to_latex(
             header=[
-                """$T/K$""",
-                """$\eta_\text{{mess}}/\si{{\milli\pascal\second}}$""",
-                """$\eta_\text{{lit}}/\si{{\milli\pascal\second}}$""",
-                """$\Delta x/\si{{\percent}}$""",
+                "$T/\\si{{\\kelvin}}$",
+                "$\\eta_{{mess}}/\\si{{\\milli\\pascal\\second}}$",
+                "$\\eta_{{lit}}/\\si{{\\milli\\pascal\\second}}$",
+                "$\\Delta x/\\si{{\\percent}}$",
             ],
             index=False,
             formatters=[
                 "{:.2f}".format,
                 "{:.2f}".format,
                 "{:.2f}".format,
-                "{:.2f}".format
+                "{:.2f}".format,
             ],
         )
     )
 print(compare)
+
+
+def reynold(p, t, d, eta):
+    v = grosse_kugel_way_length / t
+    return (p * v * d) / eta
+
+
+reynold_data_frame = pd.DataFrame()
+
+reynold_data_frame["T"] = grosse_kugel_temperature["T"]
+reynold_data_frame["t"] = grosse_kugel_temperature["mean"]
+reynold_data_frame["v"] = (grosse_kugel_way_length / grosse_kugel_temperature["mean"]) * 10**3
+reynold_data_frame["eta"] = grosse_kugel_temperature["eta"]
+reynold_data_frame["R"] = reynold(
+    density_water,
+    grosse_kugel_temperature["mean"],
+    grosse_kugel_diameter,
+    reynold_data_frame["eta"] * 10**-3,
+)
+
+print(f"reynolds mean = {reynold_data_frame['R'].mean()}")
+
+
+with open("build/reynolds.tex", "w") as f:
+    f.write(
+        reynold_data_frame.to_latex(
+            header=[
+                "$T$ in $\\si{{\\kelvin}}$",
+                "$t$ in $\\si{{\\second}}$",
+                "$v$ in $\\si{{\\milli\\meter\per\second}}$",
+                "$\\eta_{{mess}}$ in $\\si{{\\milli\\pascal\\second}}$",
+                # "$\\Delta x/\\si{{\\percent}}$",
+                "$Re$",
+            ],
+            index=False,
+            formatters=[
+                "{:.2f}".format,
+                "{:.2f}".format,
+                "{:.2f}".format,
+                "{:.2f}".format,
+                "{:.2f}".format,
+            ],
+        )
+    )

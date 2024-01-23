@@ -1,0 +1,116 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+Der erste Teil des Versuches wurde mit den Pendellängen
+\begin{equation*}
+    L_1 = \SI{50 +- 1}{cm} 
+\end{equation*}
+durchgeführt. Der Fehler wurde dabei mit 1 cm abgeschätzt. Da die gemessenen Werte für die Schwingungsdauer bei beiden Pendeln im Rahmen der Messungenauigkeit übereinstimmten,
+wurden diese Pendellänge für die folgenden Teile beibehalten.
+Der zweite Teil des Versuches wurde mit der Pendellänge
+\begin{equation}
+    L_2 = \SI{40 +- 1}{cm}
+\end{equation}
+durchgeführt.
+
+\subsection{Justierung}
+
+\input{assets/table1.tex}
+Da bei der Durchführung die Dauer von 5 Schwingungen gemessen wurde, müssen die Messwerte durch 5 geteilt werden, um die Schwingungsdauer T zu erhalten.
+Die so berechneten Werte für $T$ sind in Tabelle \ref{tab:justierung} dargestellt.
+Durch die Mittelwertsformel 
+\begin{equation}
+    \label{eq:mittelwert}
+    \bar{x} = \frac{1}{N} \sum_{n=1}^N x_n
+\end{equation}
+und die Formel für die Standardabweichung
+\begin{equation}
+    \label{eq:abweichung}
+    \Delta x = \sqrt{\frac{1}{N-1} \sum_{n=1}^N (x_n-\bar{x})^2 }
+\end{equation}
+ergeben sich für $L_1$ die Mittelwerte
+\begin{gather*}
+    T_a = \SI{1.4498 +- 0.0025}{s} \\
+    T_b = \SI{1.4520 +- 0.0040}{s}
+\end{gather*}
+%  TODO eqn
+$T_a$ ist dabei die Periodendauer des ersten Pendels, $T_b$ die Periodendauer des zweiten.
+
+\noindent Durch Gl.\eqref{eq:Periodendauer} kann für $L = \SI{50 +- 1}{cm} $ und $g = \SI{9.81}{\frac{m}{s^2}} $ der Theoriewert für die Schwingungsdauer zu
+\begin{equation}
+    T_\text{th} = \SI{1.419 +- 0.014}{s}
+\end{equation}
+bestimmt werden.
+Der Fehler berechnet sich dabei nach
+\begin{equation}
+    \label{eq:theorie_fehler}
+    \Delta T = \sqrt{ \left( \frac{1}{2} \sqrt{ \frac{1}{g l} } \right)^2 ( \Delta L)  ^2 } .
+\end{equation}
+Analog ergeben sich für $L_2$ die Werte:
+\begin{gather}
+    T_a = \SI{1.355 +- 0.004}{s} \\
+    T_b = \SI{1.353 +- 0.005}{s}
+\end{gather}
+Der dazugehörige Theoriewert ist 
+\begin{equation}
+    T_\text{th} = \SI{1.269 +- 0.016}{s}
+\end{equation}
+Der Fehler wurde mit Gl.\eqref{eq:theorie_fehler} brerechnet.
+
+\subsection{Bestimmung der Kopplungskonstante}
+\label{sec:kopplung}
+\input{assets/table2.tex}
+\paragraph{1. Für $L_1$}
+In Tabelle \ref{tab:TPlusMinus} sind die experimentell gemessenen Werte für $T_+$ und $T_-$ für beide Pendellängen aufgelistet.
+Wie zuvor wurden dabei die gemessenen Zeiten durch $5$ geteilt, um die Periodendauer zu bestimmen. Durch Mittelwertsbildung und Bestimmung der
+Standardabweichung ergeben sich:
+\begin{gather}
+    T_+ = \SI{1.4660 +- 0.0035}{s} \\
+    T_- = \SI{1.404 +- 0.006}{s}
+\end{gather}
+Mit Gleichung \eqref{eq:kopplungskonstante} lässt sich daraus die Kopplungskonstante $K$ bestimmen zu 
+\begin{equation}
+    K = \num{0.043 +- 0.005} .
+\end{equation}
+
+\paragraph{2. Für $L_2$}
+Die gemessenen Schwingungsdauern sind in Tabelle \ref{tab:TPlusMinus} zu sehen. Durch Mittelung der Werte ergeben sich folgende Schwingungsdauern:
+\begin{gather}
+    T_+ = \SI{1.357 +- 0.004}{s} \\
+    T_- = \SI{1.301 +- 007}{s}
+\end{gather}
+Mit Gleichung \eqref{eq:kopplungskonstante} lässt sich die Kopplungskonstante $K$ bestimmen zu
+\begin{equation}
+    K = \num{0.042 +- 0.006} .
+\end{equation}
+
+\subsection{Messung der Schwebungsdauer}
+
+\input{assets/table3.tex}
+
+\paragraph{1. Für $L_1$: }
+In Tabelle \ref{tab:schwebung} sind die gemessenen Schwebungsdauern für beide Pendellängen aufgelistet. Die Werte wurden wie zuvor durch 5 geteilt, um die Dauer einer Schwebung zu bestimmen.
+Für die Pendellänge $L_1$ ergibt sich der Mittelwert
+\begin{equation}
+    T_s = \SI{37.506 +- 0.031}{s}
+\end{equation}
+für die Schwebungsdauer.
+Die Schwebungsdauer lässt sich nach Gl.\eqref{eq:schwebungsdauer} auch mit Hilfe der in \ref{sec:kopplung} ermittelten Schwingungsdauern $T_+$ und $T_-$ berechnen zu
+\begin{equation}
+    T_s = \SI{33.0 +- 4.0}{s}
+\end{equation}
+Der Fehler wurde dabei gemäß der gausschen Fehlerfortpflanzung berechnet nach
+\begin{equation}
+    \Delta T_s = \sqrt{ \left( \frac{- T_-^2}{(T_+-T_-)^2} \right)^2 (\Delta T_+)^2 + \left( \frac{T_+^2}{ (T_+ - T_- )^2}  \right)^2 (\Delta T_-)^2 } .
+\end{equation}
+
+\paragraph{2. Für $L_2$: }
+Für die Pendellänge $L_2$ ergibt sich der Mittelwert
+\begin{equation}
+    T_s = \SI{28.45 +- 0.07}{s}
+\end{equation}
+für die Schwebungsdauer.
+Die Schwebungsdauer lässt sich nach Gl.\eqref{eq:schwebungsdauer} auch mit Hilfe der in \ref{sec:kopplung} ermittelten Schwingungsdauern $T_+$ und $T_-$ berechnen zu
+\begin{equation}
+    T_s = \SI{32.0 +- 5.0}{s} .
+\end{equation}
