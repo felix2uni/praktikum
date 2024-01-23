@@ -12,22 +12,22 @@
 
 Bei der kleinen Kugel wurde ein Durchmesser von \kleineKugelDurchmesser beziehungsweise ein Radius von \kleineKugelRadius gemessen.
 Daraus lässt sich zusammen mit einer Masse von \kleineKugelMasse eine Dichte von
-\begin{equation}
+\begin{equation*}
   \rho_\text{k}
   = \frac{m_\text{k}}{V_\text{k}}
   = \frac{m_\text{k}}{\frac{4}{3}\pi r_\text{k}^3}
   = \frac{\kleineKugelMasse}{\frac{4}{3}\pi\times(\kleineKugelRadius)^3}
   = \kleineKugelDichte
-\end{equation}
+\end{equation*}
 berechnen.
 Äquivalent lässt sich für die große Kugel mit einem Radius von \grosseKugelRadius und einer Masse von \grosseKugelMasse die Dichte berechnen.
-\begin{equation}
+\begin{equation*}
   \rho_\text{k}
   = \frac{m_\text{g}}{V_\text{g}}
   = \frac{m_\text{g}}{\frac{4}{3}\pi r_\text{g}^3}
   = \frac{\grosseKugelMasse}{\frac{4}{3}\pi\times(\grosseKugelRadius)^3}
   = \grosseKugelDichte.
-\end{equation}
+\end{equation*}
 
 \begin{table}
   \centering
@@ -36,6 +36,16 @@ berechnen.
   \label{tab:kleine_kugel}
 \end{table}
 
+\noindent In Tabelle \autoref{tab:kleine_kugel} sind die Messwerte der Fallzeit der kleinen Kugel aufgeführt.
+Diese werden gemittelt und die Standartabweichung wird gebildet.
+\begin{equation*}
+  t_{k} = \frac{1}{N} \sum_{i=1}^{N}x_i =  \SI{12.80}{\second}
+\end{equation*}
+\begin{equation*}
+  \Delta t_{k} = \sqrt{\bar{x²}-\bar{x}²} = \SI{0.12}{\second}
+\end{equation*}
+Sodass mit der Zeit $t_{k}$ gerechnet werden kann.
+
 \begin{table}
   \centering
   \input{build/grosse_kugel.tex}
@@ -43,67 +53,47 @@ berechnen.
   \label{tab:grosse_kugel}
 \end{table}
 
-
-\noindent In Tabelle \autoref{tab:kleine_kugel} sind die Messwerte der Fallzeit der kleinenKugel aufgeführt.
-Diese werden gemittelt, sodass mit einer Zeit
-\begin{equation}
-  t_{k} = \SI{12.80}{\second}
-\end{equation}
-weiter gerechnet werden kann.
-
-
 \noindent Mit der gegebenen Apparaturkonstante
 
-\begin{equation}
+\begin{equation*}
   K_\text{k} = \SI{0.07640e-6}{\pascal\cubic\meter\per\kilo\gram}
-\end{equation}
+\end{equation*}
 für die kleine Kugel und der Dichte von Wasser \cite{TfCuP}
 
-\begin{equation}
+\begin{equation*}
   \rho_\text{W} = \SI{998.2}{\kilo\gram\per\cubic\meter}
-\end{equation}
+\end{equation*}
 folgt bei Raumtemperatur $T=\SI{292,15}{\kelvin}$ über die Formel
-\begin{equation}
+\begin{equation*}
   \eta_\text{W} = (\rho_\text{k}-\rho_\text{W})K_\text{k} \cdot t_\text{k}
-  \label{eqn:Viskositaet}
-\end{equation}
+\end{equation*}
 die Viskosität des destillierten Wassers
 
-\begin{equation}
+\begin{equation*}
   \eta_\text{W} = \SI{1.21(1)e-3}{\pascal\second}.
-  \label{eqn:Viskosi}
-\end{equation}
+\end{equation*}
 
 
 \subsection{Apparaturkonstante}
 
 Die Messung der Temperaturabhängigkeit wird mit der großen Kugel durchgeführt,
-weshalb zunächst die Apparaturkonstante für diese Kugel bestimmt werden muss.
-Die Werte für die Masse und den Radius der großen Kugel betragen
-
-\begin{align}
-  m_\text{g} & = \grosseKugelMasse & r_\text{g} & =\grosseKugelRadius.
-\end{align}
-Das führt zu der Dichte
-
-\begin{equation}
-  \rho_\text{g} = \frac{m_\text{g}}{V_\text{g}} = \frac{m_\text{g}}
-  {\frac{4}{3}\pi r_\text{g}^3} = \SI{2407.31}{\kilo\gram\per\cubic\meter}.
-  \label{eqn:rhog}
-\end{equation}
-In Tabelle \ref{tab:grosse_kugel} sind die Messwerte der Fallzeit der großen
+weshalb zunächst die Apparaturkonstante für diese Kugel bestimmt werden muss. In Tabelle \ref{tab:grosse_kugel} sind die Messwerte der Fallzeit der großen
 Kugel aufgeführt. Der Mittelwert der zehn Werte beträgt
 
-\begin{equation}
-  t_\text{g} = \SI{48.45}{\second}.
-\end{equation}
+\begin{equation*}
+  t_\text{g} = \SI{48.45}{\second}
+\end{equation*}
+und die Standartabweichung beträgt
+\begin{equation*}
+  \Delta t_{k} = \sqrt{\bar{x²}-\bar{x}²} = \SI{0.70}{\second}.
+\end{equation*}
 Über die berechneten Dichten, die Fallzeit und die Viskosität $\eta_\text{W}$
 von Wasser folgt bei Raumtemperatur die Apparaturkonstante
 
-\begin{equation}
+\begin{equation*}
   K_\text{g} = \frac{\eta_\text{W}}{t(\rho_\text{g}-\rho_\text{W})}
   = \SI{1.77e-8}{\pascal\cubic\meter\per\kilo\gram}
-\end{equation}
+\end{equation*}
 für die große Kugel.
 
 
@@ -119,11 +109,24 @@ für die große Kugel.
 \noindent In \autoref{tab:grosse_kugel_temprature} sind die Messwerte der Fallzeiten für verschiedene Temperaturen angegeben.
 
 
-\noindent Aus den Werten für die Fallzeit $t$ kann über die Formel \eqref{eq:viskositaet}
-die Viskosität für die jeweiligen Temperaturen bestimmt werden.
-Die Messwertpaare werden dann mittels einer Exponentialfunktion gefittet.
-In Abbildung \ref{fig:grosse_kugel_temperatur} sind die Messwerte und die Ausgleichsfunktion
-jeweils mit ln$(\eta)$ und $\frac{1}{T}$ dargestellt.
+\noindent Aus den Werten für die Fallzeit $t$ kann über die Formel \eqref{eq:viskositaet} die Viskosität für die jeweiligen Temperaturen bestimmt werden.
+Die Messwertpaare werden dann mittels \autoref{eq:andradescheGl} gefittet und dadurch die Parameter $A$ und $B$ bestimmt.
+
+\begin{equation*}
+  A = \num{0.00271}\si{\kilo\gram\per\meter\per\second} = \num{2.71}\si{\gram\per\meter\per\second}
+\end{equation*}
+beziehungsweise
+\begin{equation*}
+  a = \ln(A) = \num{-5.911}\ln(\si{\kilo\gram\per\meter\per\second})
+\end{equation*}
+und
+\begin{equation*}
+  B = (\num{1788.64})\si{\kelvin}.
+\end{equation*}
+Damit lautet die Funktion der Viskosität von der Temperatur
+\begin{equation*}
+  \eta(T) = (\num{2.71e-3}) \exp(\frac{\num{1788.64}}{T}) \si{\pascal\second}.
+\end{equation*}
 
 \begin{figure}[H]
   \centering
@@ -132,42 +135,26 @@ jeweils mit ln$(\eta)$ und $\frac{1}{T}$ dargestellt.
   \label{fig:grosse_kugel_temperatur}
 \end{figure}
 
-\noindent Aus diesen Werten lässt sich nun eine Ausgleichsfunktion fitten und daraus die Koeffizienten der Andradeschen Gleichung ablesen.
+\noindent In \autoref{fig:grosse_kugel_temperatur} ist $\ln(\eta)$ gegen $\frac{1}{T}$ dargestellt um eine lineare Ansicht auf die Andradesche Gleichung zu erhalten und die Werte für $\ln(A)$ und $B$ ablesen zu können.
 
-
-\begin{equation}
-  A = \num{5.12e-4}
-\end{equation}
-und
-
-\begin{equation}
-  B = (\num{184}).
-\end{equation}
-Damit lautet die Funktion der Viskosität von der Temperatur
-\begin{equation}
-  \eta(T) = (\num{5.12e-4}) \symup{e}^{\frac{\num{184}}{T}\si{\second}}
-  \si{\pascal\second}.
-\end{equation}
 
 
 \subsection{Reynolds-Zahl}
 
-Die Reynolds-Zahl des destillierten Wassers kann mit Hilfe der Viskosität aus
-Gleichung \eqref{eq:viskositaet}, der Dichte des Wassers \cite{TfCuP},
+Die Reynolds-Zahl des destillierten Wassers kann mit Hilfe der gemessenen Viskosität, der Dichte des Wassers \cite{TfCuP},
 der Fallrohrdicke, die etwa dem Durchmesser der großen Kugel
-
-\begin{equation}
+\begin{equation*}
   d_\text{g} = 2 r_\text{g} = \grosseKugelDurchmesser
-\end{equation}
+\end{equation*}
 entspricht, und der Geschwindigkeit der großen Kugel
-
-\begin{equation}
-  v_\text{g} = \frac{0.05}{48,45}\si{\meter\per\second} =
-  \SI{1.03e-3}{\meter\per\second}
-\end{equation}
+\begin{equation*}
+  v = \frac{l}{t}
+\end{equation*}
 bestimmt werden.
-Mit Gleichung \eqref{eq:reynold} folgt
 
-\begin{equation}
-  Re = \num{6.75e-6}.
-\end{equation}
+\begin{table}
+  \centering
+  \input{build/reynolds.tex}
+  \caption{Die Reynold Zahlen der grossen Kugel in Abhängigkeit von der Temperatur.}
+  \label{tab:grosse_kugel_reynold}
+\end{table}

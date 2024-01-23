@@ -8,7 +8,7 @@ build/grosse_kugel_temperature.pdf: plot.py ../matplotlibrc ../header-matplotlib
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc conda run -n praktikum python plot.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/V207.pdf: build/grosse_kugel_temperature.pdf
+build/V207.pdf: build/grosse_kugel_temperature.pdf plot.py
 
 build/V207.pdf: FORCE | build
 	# to find header and bib files in the main directory
