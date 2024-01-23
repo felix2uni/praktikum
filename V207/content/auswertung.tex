@@ -1,12 +1,12 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \newcommand{\kleineKugelDurchmesser}{\SI{15.61}{\milli\meter} }
-\newcommand{\kleineKugelRadius}{\SI{0.007805}{\milli\meter} }
+\newcommand{\kleineKugelRadius}{\SI{0.007805}{\meter} }
 \newcommand{\kleineKugelMasse}{\SI{0.0044531}{\kilo\gram} }
 \newcommand{\kleineKugelDichte}{\SI{2235.91}{\kilo\gram\per\cubic\meter} }
 
-\newcommand{\grosseKugelRadius}{\SI{0.00789}{\milli\meter} }
-\newcommand{\grosseKugelDurchmesser}{\SI{0.01578}{\milli\meter} }
+\newcommand{\grosseKugelRadius}{\SI{0.00789}{\meter} }
+\newcommand{\grosseKugelDurchmesser}{\SI{0.01578}{\meter} }
 \newcommand{\grosseKugelMasse}{\SI{0.0049528}{\kilo\gram} }
 \newcommand{\grosseKugelDichte}{\SI{2407.31}{\kilo\gram\per\cubic\meter} }
 
@@ -110,32 +110,37 @@ für die große Kugel.
 
 
 \noindent Aus den Werten für die Fallzeit $t$ kann über die Formel \eqref{eq:viskositaet} die Viskosität für die jeweiligen Temperaturen bestimmt werden.
-Die Messwertpaare werden dann mittels \autoref{eq:andradescheGl} gefittet und dadurch die Parameter $A$ und $B$ bestimmt.
+In Abbildung \ref{fig:grosse_kugel_temperatur} sind die experimentell bestimmten Werte für $\ln{\left( \frac{\eta}{\eta_0}\right)} $ gegen $1/T$ aufgetragen.
+$\eta_0 = \SI{1}{mPa \, s}$ wird dabei genutzt, damit kein Logarithmus aus einer einheitenbehafteten Größe gebildet wird.
+
+\noindent Die Ausgleichsgerade ist eine Funktion der Form
+\begin{equation*}
+  \ln{\left( \frac{\eta}{\eta_0}\right)} = \ln{\left( \frac{A}{\eta_0}\right)} + B \cdot \frac{1}{T} \quad, 
+\end{equation*}
+dessen Parameter zu 
+
+\begin{align*}
+  \ln{\left( \frac{A}{\eta_0}\right)} &= \num{-5.937 +- 0.129 } \\
+  \implies \quad A &= \SI{2.64(34)e-3}{mPa \, s}
+\end{align*}
+und
 
 \begin{equation*}
-  A = \num{0.00271}\si{\kilo\gram\per\meter\per\second} = \num{2.71}\si{\gram\per\meter\per\second}
+  B = \SI{1797.156 +- 39.780}{K}
 \end{equation*}
-beziehungsweise
-\begin{equation*}
-  a = \ln(A) = \num{-5.911}\ln(\si{\kilo\gram\per\meter\per\second})
-\end{equation*}
-und
-\begin{equation*}
-  B = (\num{1788.64})\si{\kelvin}.
-\end{equation*}
+bestimmt wurden.
 Damit lautet die Funktion der Viskosität von der Temperatur
 \begin{equation*}
-  \eta(T) = (\num{2.71e-3}) \exp(\frac{\num{1788.64}}{T}) \si{\pascal\second}.
+  \eta(T) = (\num{2.64(34)e-3}) \exp\left(\frac{\SI{1797.156 +- 39.780}{K}}{T}\right) \si{\milli\pascal\second}.
 \end{equation*}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[]{build/grosse_kugel_temperature.pdf}
+  \includegraphics[]{build/plot_1.pdf}
   \caption{Viskosität $\eta$ in Abhängigkeit von $t$}
   \label{fig:grosse_kugel_temperatur}
 \end{figure}
 
-\noindent In \autoref{fig:grosse_kugel_temperatur} ist $\ln(\eta)$ gegen $\frac{1}{T}$ dargestellt um eine lineare Ansicht auf die Andradesche Gleichung zu erhalten und die Werte für $\ln(A)$ und $B$ ablesen zu können.
 
 
 
