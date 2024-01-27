@@ -1,0 +1,75 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Um einen Wärmefluss von einem kälteren Behältnis in ein wärmeres Behältnis zu realisieren muss Arbeit aufgewandt werden.
+Ein Weg diese Arbeit aufzuwenden ist eine Wärmepumpe, diese wird später noch genauer betrachtet.
+Um die Berechnungen zu vereinfachen wird die Wärmepumpe im folgenden erst einmal als idealisiert betrachtet.
+Die Güteziffer $\nu$ beschreibt das Verhältnis zwischen der entnommenen Wärmemenge $Q_2$ und der dazu aufgewendeten Arbeit $A$, die Summe dieser beiden Größen ist die gesamte im warmen Behältnis aufgenommene Wärmemenge.
+
+
+\begin{equation}
+  Q_1 = Q_2 + A
+  \label{eqn:q1}
+\end{equation}
+\begin{equation}
+  \nu = \frac{Q1}{A}
+  \label{eqn:nu}
+\end{equation}
+
+\noindent Nach dem 2.HS der Thermodynamik lässt sich zudem die Beziehung zwischen den Wärmemengen und Temperaturen der beiden Reservoire durch folgende Formel ausdrücken:
+\begin{equation}
+  \frac{Q_1}{T_1} - \frac{Q_2}{T_2} = 0
+  \label{eqn:2HS}
+\end{equation}
+Für die Gültigkeit dieser Formel muss jedoch gelten, dass der stattfindende Übertragungsprozess reversibel sei. Somit müsste die aufgewandte mechanische Energie jederzeit vollständig zurückgewonnen werden können.
+Da es sich dabei um eine idealisierte Annahme handelt, die in der Realität nie zutrifft, muss \autoref{eqn:2HS} umformuliert werden:
+\begin{equation}
+  \frac{Q_1}{T_1} - \frac{Q_2}{T_2} > 0
+  \label{eqn:2HS1}
+\end{equation}
+Aus den Gleichungen \ref{eqn:q1} bis \ref{eqn:2HS1} folgt somit:
+\begin{align}
+  \nu_{id}   & = \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2} \label{eqn:A1.2} \\
+  \nu_{real} & < \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2} \label{eqn:A1.3}
+\end{align}
+Die Gleichungen \ref{eqn:A1.2} und \ref{eqn:A1.3} zeigen, dass eine Wärmepumpe umso effektiver eingestuft
+werden kann, je kleiner die Differenz zwischen T1 und T2
+ist.
+\subsection*{Bestimmung der realen Güteziffer $\nu$}
+Mit dem Werten von $T_1$ kann nun die pro Zeiteinheit gewonnene Wärmemenge berechnet werden:
+\begin{align}
+  \frac{\increment Q_1}{\increment t} & = (m_1c_W + m_kc_k) \frac{\increment T_1}{\increment t} \\
+  \nu                                 & = \frac{\increment Q_1}{\increment t N}
+  \label{eqn:Gueteziffer}
+\end{align}
+$m_1c_w$ und $m_k c_k$ entsprechen dabei den Wärmekapazitäten der Kupferschlange und des Eimers.
+Für die Güteziffer wird noch N als die zeitlich gemittelte Leistung benötigt.
+subsection{Bestimmung des Massendurchsatzes}
+Mit den Werten von $T_2$ und der Verdampfungswärme $L$ kann nun der Massendurchsatz $\increment m $
+berechnet werden:
+
+\begin{align}
+  \label{eqn:Massendurchsatz}
+  \frac{\increment Q_2}{\increment t} & = (m_2 c_W + m_k c_k) \frac{\increment T_2}{\increment t} \\
+  \frac{\increment Q_2}{\increment t} & = L \frac{\increment m}{\increment t}
+\end{align}
+
+\subsection{Bestimmung der mechanischen Kompressorleistung \texorpdfstring{$N_{mech}$}{t} }
+
+Um die mechnanische Kompresorleistung $N_{mech}$ zu bestimmen muss vorher die vom Kompressor aufgebrachte
+Arbeit zur Komprimierung des Volumens $V_a$ auf das Volumen $V_b$ berechnet werden:
+\begin{equation}
+  \label{eqn:Am}
+  A_m = \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) V_a
+\end{equation}
+Für den Kompressor wird nun näherungsweise angenommen, dass es sich um eine adiabatische Komprimierung handelt,
+sodass die Poisson-Gleichung als Zusammenhang zwischen Druck und Volumen gilt:
+\begin{equation}
+  p_a V^{\kappa}_a = p_b V^{\kappa}_b = p V^{\kappa} .
+\end{equation}
+Mit der Dichte $\rho$ im gasförmigen Zustand, also beim Druck $p_a$, kann nun $N_{mech}$ berechnet werden:
+\begin{equation}
+  \label{eqn:Nmech}
+  N_{mech} = \frac{\increment A_m}{\increment t} =  \frac{1}{\kappa - 1} \left( p_b \sqrt[\kappa]{\frac{p_a}{p_b}} - p_a \right) \frac{1}{\rho} \frac{\increment m}{\increment t}
+\end{equation}
+
